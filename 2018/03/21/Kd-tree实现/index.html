@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="机器学习 - python," />
 
 
 
@@ -81,13 +81,21 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Aitical的个人小站">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="K-近邻算法学习算法描述:KNN原理也就是常说的物以类聚,人以群分.当无法判断当前点所属分类时,可以通过统计它所属的位置特征,衡量它周围的邻居权重,把分配到权重大的一类. 首先要知道变量之间的距离的表示:    $$L_{p}(x_{(i)},x_{(j)})=\left( \sum_{l=1}^{n}|x_{i}^{(l)}-x_{j}^{(l)}|^{p}\right)^{\frac{1}{p">
+<meta name="keywords" content="机器学习 - python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Kd-tree实现">
+<meta property="og:url" content="http://yoursite.com/2018/03/21/Kd-tree实现/index.html">
 <meta property="og:site_name" content="Aitical的个人小站">
+<meta property="og:description" content="K-近邻算法学习算法描述:KNN原理也就是常说的物以类聚,人以群分.当无法判断当前点所属分类时,可以通过统计它所属的位置特征,衡量它周围的邻居权重,把分配到权重大的一类. 首先要知道变量之间的距离的表示:    $$L_{p}(x_{(i)},x_{(j)})=\left( \sum_{l=1}^{n}|x_{i}^{(l)}-x_{j}^{(l)}|^{p}\right)^{\frac{1}{p">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2018/03/21/Kd-tree实现/kd-tree1.png">
+<meta property="og:image" content="http://yoursite.com/2018/03/21/Kd-tree实现/kd-tree2.png">
+<meta property="og:updated_time" content="2018-03-21T15:26:50.486Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Aitical的个人小站">
+<meta name="twitter:title" content="Kd-tree实现">
+<meta name="twitter:description" content="K-近邻算法学习算法描述:KNN原理也就是常说的物以类聚,人以群分.当无法判断当前点所属分类时,可以通过统计它所属的位置特征,衡量它周围的邻居权重,把分配到权重大的一类. 首先要知道变量之间的距离的表示:    $$L_{p}(x_{(i)},x_{(j)})=\left( \sum_{l=1}^{n}|x_{i}^{(l)}-x_{j}^{(l)}|^{p}\right)^{\frac{1}{p">
+<meta name="twitter:image" content="http://yoursite.com/2018/03/21/Kd-tree实现/kd-tree1.png">
 
 
 
@@ -117,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/03/21/Kd-tree实现/"/>
 
 
 
 
 
-  <title>Aitical的个人小站</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>Kd-tree实现 | Aitical的个人小站</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -142,8 +150,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left 
-  page-home">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -236,9 +243,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -268,9 +275,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/21/Kd-tree实现/" itemprop="url">Kd-tree实现</a></h1>
+          <h1 class="post-title" itemprop="name headline">Kd-tree实现</h1>
         
 
         <div class="post-meta">
@@ -342,9 +347,7 @@
       
 
       
-        
-          
-            <h1 id="K-近邻算法学习"><a href="#K-近邻算法学习" class="headerlink" title="K-近邻算法学习"></a>K-近邻算法学习</h1><h2 id="算法描述"><a href="#算法描述" class="headerlink" title="算法描述:"></a>算法描述:</h2><p>KNN原理也就是常说的物以类聚,人以群分.当无法判断当前点所属分类时,可以通过统计它所属的位置特征,衡量它周围的邻居权重,把分配到权重大的一类.</p>
+        <h1 id="K-近邻算法学习"><a href="#K-近邻算法学习" class="headerlink" title="K-近邻算法学习"></a>K-近邻算法学习</h1><h2 id="算法描述"><a href="#算法描述" class="headerlink" title="算法描述:"></a>算法描述:</h2><p>KNN原理也就是常说的物以类聚,人以群分.当无法判断当前点所属分类时,可以通过统计它所属的位置特征,衡量它周围的邻居权重,把分配到权重大的一类.</p>
 <p>首先要知道变量之间的距离的表示:<br>    $$L_{p}(x_{(i)},x_{(j)})=\left( \sum_{l=1}^{n}|x_{i}^{(l)}-x_{j}^{(l)}|^{p}\right)^{\frac{1}{p}}$$</p>
 <p>其中p=2时就是欧氏距离<br>  $$L_{p}(x_{(i)},x_{(j)})=\left( \sum_{l=1}^{n}|x_{i}^{(l)}-x_{j}^{(l)}|^{2}\right)^{\frac{1}{2}}$$</p>
 <p>p=1时称曼哈顿距离:<br>    $$ L_{p}(x_{(i)},x_{(j)})=\left( \sum_{l=1}^n | x_{i}^{(l)}-x_{j}^{(l)} |\right) $$</p>
@@ -375,8 +378,6 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 简单测试下</span></span><br><span class="line">df = np.array([[   <span class="number">7</span>,    <span class="number">1</span>,    <span class="number">2</span>],</span><br><span class="line">               [   <span class="number">3</span>,    <span class="number">4</span>,    <span class="number">1</span>],</span><br><span class="line">               [   <span class="number">3</span>,   <span class="number">54</span>,    <span class="number">6</span>],</span><br><span class="line">            [   <span class="number">8</span>,   <span class="number">97</span>,    <span class="number">4</span>],</span><br><span class="line">                [   <span class="number">3</span>,    <span class="number">5</span>,  <span class="number">345</span>],</span><br><span class="line">               [  <span class="number">23</span>,   <span class="number">16</span>, <span class="number">6534</span>]])</span><br><span class="line"></span><br><span class="line">root = <span class="keyword">None</span></span><br><span class="line">root = createKdTree(root, df)</span><br><span class="line"></span><br><span class="line">KNN(root, [<span class="number">4</span>,<span class="number">6</span>,<span class="number">5</span>],<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
 <p>函数式编程,实现kd-tree也没有进行封装,仅仅作为思路上的一种测试实现,若要进行预测操作可以对函数稍作修改即可.</p>
 
-          
-        
       
     </div>
     
@@ -386,19 +387,54 @@
     
 
     
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>想吃辣条~\(≧▽≦)/~啦啦啦</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="吴刚 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="吴刚 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
 
     
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/机器学习-python/" rel="tag"># 机器学习 - python</a>
+          
+        </div>
+      
+
+      
+      
+      
 
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -408,10 +444,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -419,6 +456,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -439,8 +480,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -521,6 +571,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#K-近邻算法学习"><span class="nav-number">1.</span> <span class="nav-text">K-近邻算法学习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#算法描述"><span class="nav-number">1.1.</span> <span class="nav-text">算法描述:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#kd树"><span class="nav-number">1.2.</span> <span class="nav-text">kd树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法实现"><span class="nav-number">1.3.</span> <span class="nav-text">算法实现</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -661,6 +727,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
