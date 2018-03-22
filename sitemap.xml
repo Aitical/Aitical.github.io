@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://dhfs.github.io/schemas/sitemap/0.9">
   
-  <url>
-    <loc>http://yoursite.com/googlea457be19cc151361.html</loc>
-    
-    <lastmod>2018-03-22T13:37:41.442Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/baidu_verify_rbXB3ukSoM.html</loc>
-    
-    <lastmod>2018-03-22T13:37:32.582Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2018/03/21/KNN%E4%B8%8EKd-tree%E5%AE%9E%E7%8E%B0/</loc>
-    
-    <lastmod>2018-03-22T13:02:36.800Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/categories/index.html</loc>
-    
-    <lastmod>2018-03-21T12:08:21.574Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/tags/index.html</loc>
-    
-    <lastmod>2018-03-21T12:07:57.186Z</lastmod>
-    
-  </url>
-  
+      
+        http://aitical.github.io/googlea457be19cc151361.html
+        
+        2018-03-22T13:37:41.442Z
+        
+      
+      
+      
+        http://aitical.github.io/baidu_verify_rbXB3ukSoM.html
+        
+        2018-03-22T13:37:32.582Z
+        
+      
+      
+      
+        http://aitical.github.io/2018/03/21/KNN%E4%B8%8EKd-tree%E5%AE%9E%E7%8E%B0/
+        
+        2018-03-22T13:02:36.800Z
+        
+      
+      
+      
+        http://aitical.github.io/categories/index.html
+        
+        2018-03-21T12:08:21.574Z
+        
+      
+      
+      
+        http://aitical.github.io/tags/index.html
+        
+        2018-03-21T12:07:57.186Z
+        
+      
+      
 </urlset>
