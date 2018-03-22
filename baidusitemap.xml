@@ -3,12 +3,14 @@
 
 
     
+    
+    
   <url>
-    <loc>http://yoursite.com/2018/03/21/Kd-tree%E5%AE%9E%E7%8E%B0/</loc>
-    <lastmod>2018-03-21T15:26:50.486Z</lastmod>
+    <loc>http://yoursite.com/2018/03/21/KNN%E4%B8%8EKd-tree%E5%AE%9E%E7%8E%B0/</loc>
+    <lastmod>2018-03-22T13:02:36.800Z</lastmod>
     <data>
         <display>
-        <title>Kd-tree实现</title>
+        <title>KNN与Kd-tree实现</title>
         <pubTime>2018-03-21T14:09:41.000Z</pubTime>
         
         <tag>机器学习 - python</tag>
