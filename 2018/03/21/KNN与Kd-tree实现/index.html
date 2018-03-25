@@ -81,21 +81,21 @@
 
 
 
-<meta name="description" content="K-近邻算法学习算法描述:KNN原理也就是常说的物以类聚,人以群分.当无法判断当前点所属分类时,可以通过统计它所属的位置特征,衡量它周围的邻居权重,把分配到权重大的一类. 首先要知道变量之间的距离的表示: 其中p=2时就是欧氏距离 $$L_{p}(x_{(i)},x_{(j)})=\left( \sum_{l=1}^{n}|x_{i}^{(l)}-x_{j}^{(l)}|^{2}\right)^{">
+<meta name="description" content="K-近邻算法学习算法描述:KNN原理也就是常说的物以类聚,人以群分.当无法判断当前点所属分类时,可以通过统计它所属的位置特征,衡量它周围的邻居权重,把分配到权重大的一类. 首先要知道变量之间的距离的表示:$$L_{p}(x_{(i)},x_{(j)})=\left( \sum_{l=1}^{n}|x_{i}^{(l)}-x_{j}^{(l)}|^{p}\right)^{\frac{1}{p}}$$">
 <meta name="keywords" content="机器学习 - python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="KNN与Kd-tree实现">
 <meta property="og:url" content="http://yoursite.com/2018/03/21/KNN与Kd-tree实现/index.html">
 <meta property="og:site_name" content="Aitical的个人小站">
-<meta property="og:description" content="K-近邻算法学习算法描述:KNN原理也就是常说的物以类聚,人以群分.当无法判断当前点所属分类时,可以通过统计它所属的位置特征,衡量它周围的邻居权重,把分配到权重大的一类. 首先要知道变量之间的距离的表示: 其中p=2时就是欧氏距离 $$L_{p}(x_{(i)},x_{(j)})=\left( \sum_{l=1}^{n}|x_{i}^{(l)}-x_{j}^{(l)}|^{2}\right)^{">
+<meta property="og:description" content="K-近邻算法学习算法描述:KNN原理也就是常说的物以类聚,人以群分.当无法判断当前点所属分类时,可以通过统计它所属的位置特征,衡量它周围的邻居权重,把分配到权重大的一类. 首先要知道变量之间的距离的表示:$$L_{p}(x_{(i)},x_{(j)})=\left( \sum_{l=1}^{n}|x_{i}^{(l)}-x_{j}^{(l)}|^{p}\right)^{\frac{1}{p}}$$">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2018/03/21/KNN与Kd-tree实现/iris.png">
 <meta property="og:image" content="http://yoursite.com/2018/03/21/KNN与Kd-tree实现/kd-tree1.png">
 <meta property="og:image" content="http://yoursite.com/2018/03/21/KNN与Kd-tree实现/kd-tree2.png">
-<meta property="og:updated_time" content="2018-03-22T13:02:36.800Z">
+<meta property="og:updated_time" content="2018-03-25T15:32:16.871Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="KNN与Kd-tree实现">
-<meta name="twitter:description" content="K-近邻算法学习算法描述:KNN原理也就是常说的物以类聚,人以群分.当无法判断当前点所属分类时,可以通过统计它所属的位置特征,衡量它周围的邻居权重,把分配到权重大的一类. 首先要知道变量之间的距离的表示: 其中p=2时就是欧氏距离 $$L_{p}(x_{(i)},x_{(j)})=\left( \sum_{l=1}^{n}|x_{i}^{(l)}-x_{j}^{(l)}|^{2}\right)^{">
+<meta name="twitter:description" content="K-近邻算法学习算法描述:KNN原理也就是常说的物以类聚,人以群分.当无法判断当前点所属分类时,可以通过统计它所属的位置特征,衡量它周围的邻居权重,把分配到权重大的一类. 首先要知道变量之间的距离的表示:$$L_{p}(x_{(i)},x_{(j)})=\left( \sum_{l=1}^{n}|x_{i}^{(l)}-x_{j}^{(l)}|^{p}\right)^{\frac{1}{p}}$$">
 <meta name="twitter:image" content="http://yoursite.com/2018/03/21/KNN与Kd-tree实现/iris.png">
 
 
@@ -366,10 +366,9 @@ var _hmt = _hmt || [];
 
       
         <h1 id="K-近邻算法学习"><a href="#K-近邻算法学习" class="headerlink" title="K-近邻算法学习"></a>K-近邻算法学习</h1><h2 id="算法描述"><a href="#算法描述" class="headerlink" title="算法描述:"></a>算法描述:</h2><p>KNN原理也就是常说的物以类聚,人以群分.当无法判断当前点所属分类时,可以通过统计它所属的位置特征,衡量它周围的邻居权重,把分配到权重大的一类.</p>
-<p>首先要知道变量之间的距离的表示:</p>
-<p>其中p=2时就是欧氏距离<br> $$L_{p}(x_{(i)},x_{(j)})=\left( \sum_{l=1}^{n}|x_{i}^{(l)}-x_{j}^{(l)}|^{2}\right)^{\frac{1}{2}}$$</p>
-<p>p=1时称曼哈顿距离:<br>    $$L_{p}(x_{(i)},x_{(j)})=\left( \sum_{l=1}^{n}|x_{i}^{(l)}-x_{j}^{(l)}|\right)$$</p>
-<p>p=$\propto$时, 它是各个坐标距离的最大值:<br>    $$L_{\propto}(x_{i}, x_{j})=max(|x_{i}^{(l)}-x_{j}^{l}|)$$</p>
+<p>首先要知道变量之间的距离的表示:<br>$$<br>L_{p}(x_{(i)},x_{(j)})=\left( \sum_{l=1}^{n}|x_{i}^{(l)}-x_{j}^{(l)}|^{p}\right)^{\frac{1}{p}}<br>$$<br>其中p=2时就是欧氏距离<br>$$<br>L_{p}(x_{(i)},x_{(j)})=\left( \sum_{l=1}^{n}|x_{i}^{(l)}-x_{j}^{(l)}|^{2}\right)^{\frac{1}{2}}<br>$$</p>
+<p>p=1时称曼哈顿距离:<br>$$<br>L_{p}(x_{(i)},x_{(j)})=\left( \sum_{l=1}^{n}|x_{i}^{(l)}-x_{j}^{(l)}|\right)<br>$$</p>
+<p>p=$\propto$时, 它是各个坐标距离的最大值:<br>$$<br>L_{\propto}(x_{i}, x_{j})=max(|x_{i}^{(l)}-x_{j}^{l}|)<br>$$</p>
 <p>KNN算法中,所选择对象的邻居对象都是已经正确分类的.该方法在定类的决策中只依据最近的一个邻居或者几个来决定所属类别.所以这里面K的取值还是很关键的.太小则容易受到训练数据的噪声影响从而产生过拟合,太大则有可能会误会测试,因为这样会使近邻中包含了远离的点.</p>
 <p>算法描述:</p>
 <ol>
@@ -389,11 +388,13 @@ var _hmt = _hmt || [];
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">y_pre = knn(X_train, y_train, X_test, <span class="number">5</span>)</span><br><span class="line">accuracy_score(y_pre, y_test)</span><br></pre></td></tr></table></figure>
 <h2 id="kd树"><a href="#kd树" class="headerlink" title="kd树"></a>kd树</h2><p>上面的例子中采用的是循环遍历的方法实现了距离的计算,在数据量很大的时候这样的遍历显然会带来性能的瓶颈,当然也可以对数据进行向量化计算来提升速度,不过这里我们引入kd树这一种数据结构来存储数据并进行knn</p>
 <p>kd树是一种对k维空间中的实例点进行存储以便对其进行快速检索的树形数据结构.kd树是二叉树,表示k维空间的一个划分(partition).构造kd树相当于不断地用垂直于坐标轴的超平面将k维空间切分,构成一系列的k维超矩形区域,kd树的每个节点对应于一个k维超矩形区域.</p>
-<p><strong>算法: 构造平衡kd树<br></strong><br>    输入: k维空间数据集$T=\lbrace{ x_{1}, x_{2}, \dots, x_{N} \rbrace}$<br><br>    其中$x_{i} = \left( x^{(1)}<em>{i}, x^{(2)}</em>{i}, \dots, x^{(k)}_{i}\right), i=1, 2, \dots, N$<br><br>    输出: kd树</p>
-<p>开始: 构造根节点, 选择$x^{(1)}$为坐标轴,以T中所有实例的$x^{(1)}$坐标的中位数为切分点,将根节点对应的超矩形区域切分成两个子区域.切分由通过切分点并与坐标轴$x^{(1)}$垂直的超平面实现<br><br>由根节点生成深度为1的左,右子结点: 左子结点对应的坐标$x^{(1)}$小于切分点的子区域,右子结点对应的坐标大于切分点的子区域<br><br>将落在切分面上的实例点保存在根节点</p>
+<p><strong>算法: 构造平衡kd树<br></strong><br>    输入: k维空间数据集$T=\lbrace{ x_{1}, x_{2}, \dots, x_{N} \rbrace}$<br> 其中$x_{i} = \left( x_{i}^{(1)}, x_{i}^{(2)}, \dots, x_{i}^{(k)}\right), i=1, 2, \dots, N$<br><br>    输出: kd树</p>
+<p>开始: 构造根节点, 选择$x^{(1)}$为坐标轴,以T中所有实例的$x^{(1)}$坐标的中位数为切分点,将根节点对应的超矩形区域切分成两个子区域.切分由通过切分点并与坐标轴$x^{(1)}$垂直的超平面实现</p>
+<p>由根节点生成深度为1的左,右子结点: 左子结点对应的坐标$x^{(1)}$小于切分点的子区域,右子结点对应的坐标大于切分点的子区域</p>
+<p>将落在切分面上的实例点保存在根节点</p>
 <p>重复: 对于深度为$j$的结点, 选择$x^{(l)}$为切分的坐标轴<br>其中$l=(jmodK)+1$<br>以该结点的区域中所有实例的$x^{(i)}$坐标的中位数为切分点,将该结点对应的超矩形区域切分成两个子区域,切分由通过切分点并垂直于坐标轴$x^{(l)}$的超平面实现<br><br>由根节点生成深度为j+1的左,右子结点: 左子结点对应的坐标$x^{(l)}$小于切分点的子区域,右子结点对应的坐标大于切分点的子区域<br><br>将落在切分面上的实例点保存在根节点</p>
 <p>直到两个子区域没有实例在时停止.</p>
-<p>例:二维空间数据集:<br>        $$T=\lbrace{(2, 3)^{T},(5, 4)^{T},(9, 6)^{T},(4, 7)^{T},(8, 1)^{T},(7, 2)^{T}\rbrace}$$</p>
+<p>例:二维空间数据集:<br>$$<br>T=\lbrace{(2, 3)^{T},(5, 4)^{T},(9, 6)^{T},(4, 7)^{T},(8, 1)^{T},(7, 2)^{T}\rbrace}<br>$$</p>
 <p>选择$x^{(1)}$轴,中位数是7,平面$x^{(1)}=7$把空间分成左右两个子矩形</p>
 <p>左矩形中与$x^{(2)}=4$分成两个矩形,右矩形中$x^{(2)}=6$划分</p>
 <p>重复上述操作就得到下面的示意图</p>
@@ -459,6 +460,22 @@ var _hmt = _hmt || [];
       
       
 
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/25/决策树/" rel="prev" title="决策树">
+                决策树 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
 
       
@@ -536,7 +553,7 @@ var _hmt = _hmt || [];
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -558,7 +575,7 @@ var _hmt = _hmt || [];
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
