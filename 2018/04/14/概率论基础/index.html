@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="概率统计,相关系数," />
 
 
 
@@ -81,13 +81,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Aitical的个人小站">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="期望定义设$P(x)$是一个离散概率分布函数, 自变量的取值范围为$[x_{1}, x_{2}, x_{3},\dots,x_{n}]$其期望定义为:$$E(x)=\sum_{k=1}^{n}x_{k}P(x_{k})$$若$P(x)$是一个连续型概率密度函数,其期望为:$$E(x)=\int_{-\infty}^{+\infty}xP(x)dx$$ 性质线性运算规则: 线性运算的期望等于期望的线">
+<meta name="keywords" content="概率统计,相关系数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="概率论基础">
+<meta property="og:url" content="http://yoursite.com/2018/04/14/概率论基础/index.html">
 <meta property="og:site_name" content="Aitical的个人小站">
+<meta property="og:description" content="期望定义设$P(x)$是一个离散概率分布函数, 自变量的取值范围为$[x_{1}, x_{2}, x_{3},\dots,x_{n}]$其期望定义为:$$E(x)=\sum_{k=1}^{n}x_{k}P(x_{k})$$若$P(x)$是一个连续型概率密度函数,其期望为:$$E(x)=\int_{-\infty}^{+\infty}xP(x)dx$$ 性质线性运算规则: 线性运算的期望等于期望的线">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-04-14T07:57:19.899Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Aitical的个人小站">
+<meta name="twitter:title" content="概率论基础">
+<meta name="twitter:description" content="期望定义设$P(x)$是一个离散概率分布函数, 自变量的取值范围为$[x_{1}, x_{2}, x_{3},\dots,x_{n}]$其期望定义为:$$E(x)=\sum_{k=1}^{n}x_{k}P(x_{k})$$若$P(x)$是一个连续型概率密度函数,其期望为:$$E(x)=\int_{-\infty}^{+\infty}xP(x)dx$$ 性质线性运算规则: 线性运算的期望等于期望的线">
 
 
 
@@ -130,13 +135,13 @@ var _hmt = _hmt || [];
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/04/14/概率论基础/"/>
 
 
 
 
 
-  <title>Aitical的个人小站</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>概率论基础 | Aitical的个人小站</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -159,8 +164,7 @@ var _hmt = _hmt || [];
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left 
-  page-home">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -253,9 +257,9 @@ var _hmt = _hmt || [];
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -285,9 +289,7 @@ var _hmt = _hmt || [];
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/14/概率论基础/" itemprop="url">概率论基础</a></h1>
+          <h1 class="post-title" itemprop="name headline">概率论基础</h1>
         
 
         <div class="post-meta">
@@ -359,18 +361,26 @@ var _hmt = _hmt || [];
       
 
       
-        
-          
-          期望定义设$P(x)$是一个离散概率分布函数, 自变量的取值范围为$[x_{1}, x_{2}, x_{3},\dots,x_{n}]$其期望定义为:$$E(x)=\sum_{k=1}^{n}x_{k}P(x_{k})$$若$P(x)$是一个连续型概率密度函数,其期望为:$$E(x)=\int_{-
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/04/14/概率论基础/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+        <h2 id="期望"><a href="#期望" class="headerlink" title="期望"></a>期望</h2><h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><p>设$P(x)$是一个离散概率分布函数, 自变量的取值范围为$[x_{1}, x_{2}, x_{3},\dots,x_{n}]$其期望定义为:<br>$$<br>E(x)=\sum_{k=1}^{n}x_{k}P(x_{k})<br>$$<br>若$P(x)$是一个连续型概率密度函数,其期望为:<br>$$<br>E(x)=\int_{-\infty}^{+\infty}xP(x)dx<br>$$</p>
+<h4 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h4><p><strong>线性运算规则</strong>: 线性运算的期望等于期望的线性运算<br>$$<br>E(ax+by+c) = aE(x)+bE(y)+c<br>$$<br>更一般的表达形式:<br>$$<br>E(\sum_{k=1}^{n}a_{k}x_{k}+c) = \sum_{k=1}^{n}a_{k}E(x_{k}) +c<br>$$<br><strong>乘积的期望</strong></p>
+<p>乘积的期望不等于期望的乘积,当且仅当变量相互独立时,如变量x,y相互独立,才有$E(xy)=E(x)E(y)$</p>
+<h2 id="方差"><a href="#方差" class="headerlink" title="方差"></a>方差</h2><h4 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h4><p>方差是一种特殊的期望:<br>$$<br>Var(x) = E((x-E(x))^{2})<br>$$</p>
+<h4 id="性质-1"><a href="#性质-1" class="headerlink" title="性质"></a>性质</h4><p><strong>另一种表示形式</strong></p>
+<p>根据期望的性质对方差公式进行展开运算:<br>$$<br>\begin{align}<br>Var(x) &amp;= E(x^{2}-2xE(x)+(E(x))^{2}) \\<br>&amp;=E(x^{2})-2E(x)E(x)+(E(x))^{2} \\<br>&amp;=E(x^{2})-(E(x))^{2}<br>\end{align}<br>$$<br><strong>常数方差</strong></p>
+<p>设$C$是常数,则$Var(C)=0$</p>
+<p><strong>一些运算性质</strong></p>
+<p>设随机变量$X$方差存在$Var(X),\space a,b$为常数则:<br>$$<br>Var(aX+b) = a^{2}Var(X)<br>$$<br>设随机变量$X,Y$方差存在,则<br>$$<br>Var(aX+bY) = a^{2}Var(X)+b^{2}Var(Y)+2Cov(X,Y)<br>$$<br>其中$Cov(X,Y)$是协方差</p>
+<p>当变量间相互独立时,可以推广得到<br>$$<br>Var(\sum_{k=1}^{n}a_{k}X_{k}) = \sum_{k=1}^{n}a_{k}^{2}Var(X_{k})<br>$$</p>
+<h2 id="协方差"><a href="#协方差" class="headerlink" title="协方差"></a>协方差</h2><h4 id="定义-2"><a href="#定义-2" class="headerlink" title="定义"></a>定义</h4><p>$$<br>Cov(x,y) = E((x-E(x))(y-E(y)))<br>$$</p>
+<h4 id="性质-2"><a href="#性质-2" class="headerlink" title="性质"></a>性质</h4><p><strong>另一种形式</strong><br>$$<br>Cov(x,y)=E(xy)-E(x)E(y)<br>$$<br><strong>方差是一种特殊的协方差</strong><br>$$<br>Cov(x,x) = Var(x)<br>$$<br><strong>线性组合的协方差</strong><br>$$<br>Cov(\sum_{k=1}^{n}a_{k}x_{k}, \sum_{j=1}^{m}b_{j}y_{j}) = \sum_{k=1}^{n}\sum_{j=1}^{m}a_{k}b_{j}Cov(x_{k}, y_{j})<br>$$<br>一种特殊情况:<br>$$<br>Cov(a+bx, c+dy) = dbCov(x,y)<br>$$</p>
+<h2 id="相关系数"><a href="#相关系数" class="headerlink" title="相关系数"></a>相关系数</h2><h4 id="定义-3"><a href="#定义-3" class="headerlink" title="定义"></a>定义</h4><p>设随机变量X,Y期望和方差都存在,则X与Y的相关系数:<br>$$<br>\rho_{XY} = \frac{Cov(X,Y)}{\sqrt{Var(x)}\sqrt{Var(Y)}}<br>$$</p>
+<h4 id="性质-3"><a href="#性质-3" class="headerlink" title="性质"></a>性质</h4><p><strong>有界性</strong></p>
+<p>$|\rho_{XY}|\le1$</p>
+<p><strong>统计意义</strong></p>
+<p>越趋近1则说明正相关越强</p>
+<p>越趋近-1则是负相关性越强</p>
+<p>0是非线性相关</p>
+
       
     </div>
     
@@ -380,316 +390,72 @@ var _hmt = _hmt || [];
     
 
     
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>想吃辣条~\(≧▽≦)/~啦啦啦</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="吴刚 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="吴刚 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
 
     
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/25/决策树/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="吴刚">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/img.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Aitical的个人小站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/25/决策树/" itemprop="url">决策树</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-25T23:32:44+08:00">
-                2018-03-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/统计学习方法/" itemprop="url" rel="index">
-                    <span itemprop="name">统计学习方法</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/概率统计/" rel="tag"># 概率统计</a>
           
-
+            <a href="/tags/相关系数/" rel="tag"># 相关系数</a>
           
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          
-          决策树模型分类决策树模型是一种描述对实例进行分类的属性结构.决策树由结点(node)和有向边(directed edge)组成.结点有两种类型,内部结点(internal node)和叶结点(leaf node).内部结点表示一个特征或属性,也结点表示一个类.用决策树分类,从根结点开始,对实例的某一
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/03/25/决策树/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/25/决策树/" rel="next" title="决策树">
+                <i class="fa fa-chevron-left"></i> 决策树
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
 
-    
+          <span class="post-nav-divider"></span>
 
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/21/KNN与Kd-tree实现/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="吴刚">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/img.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Aitical的个人小站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/21/KNN与Kd-tree实现/" itemprop="url">KNN与Kd-tree实现</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+          <div class="post-nav-prev post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-21T22:09:41+08:00">
-                2018-03-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/统计学习方法/" itemprop="url" rel="index">
-                    <span itemprop="name">统计学习方法</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-          K-近邻算法学习算法描述:KNN原理也就是常说的物以类聚,人以群分.当无法判断当前点所属分类时,可以通过统计它所属的位置特征,衡量它周围的邻居权重,把分配到权重大的一类.
-首先要知道变量之间的距离的表示:$$L_{p}(x_{(i)},x_{(j)})=\left( \sum_{l=1}^{n}|x
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/03/21/KNN与Kd-tree实现/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -699,10 +465,11 @@ var _hmt = _hmt || [];
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -710,6 +477,10 @@ var _hmt = _hmt || [];
 
 
           
+
+  
+
+
 
         </div>
         
@@ -730,8 +501,17 @@ var _hmt = _hmt || [];
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -812,6 +592,22 @@ var _hmt = _hmt || [];
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#期望"><span class="nav-number">1.</span> <span class="nav-text">期望</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#定义"><span class="nav-number">1.0.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#性质"><span class="nav-number">1.0.2.</span> <span class="nav-text">性质</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方差"><span class="nav-number">2.</span> <span class="nav-text">方差</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#定义-1"><span class="nav-number">2.0.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#性质-1"><span class="nav-number">2.0.2.</span> <span class="nav-text">性质</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#协方差"><span class="nav-number">3.</span> <span class="nav-text">协方差</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#定义-2"><span class="nav-number">3.0.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#性质-2"><span class="nav-number">3.0.2.</span> <span class="nav-text">性质</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相关系数"><span class="nav-number">4.</span> <span class="nav-text">相关系数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#定义-3"><span class="nav-number">4.0.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#性质-3"><span class="nav-number">4.0.2.</span> <span class="nav-text">性质</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -960,6 +756,10 @@ var _hmt = _hmt || [];
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
