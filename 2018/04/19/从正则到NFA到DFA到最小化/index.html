@@ -81,13 +81,13 @@
 
 
 
-<meta name="description" content="获取DFA基础步骤就三步:  从正则到NFA 从NFA用子集构造法到DFA 对DFA进行最小化  构造正则表达式$(ab)(a|b)(ba)$等价的DFA从正则到NFA首先记住几个基本的转化:  在正则表达式中只要反复使用这几个基础的转换就能获得NFA了  从NFA到DFA: 子集构造法子集是对NFA中所有状态的子集,首先初始的一个状态子集是从开始通过任意个$\epsilon$可到达的状态集合,这">
+<meta name="description" content="获取DFA基础步骤就三步:  从正则到NFA 从NFA用子集构造法到DFA 对DFA进行最小化  构造正则表达式$(ab)^{}(a^{}|b^{})(ba)^{}$等价的DFA从正则到NFA首先记住几个基本的转化:  在正则表达式中只要反复使用这几个基础的转换就能获得NFA了  从NFA到DFA: 子集构造法子集是对NFA中所有状态的子集,首先初始的一个状态子集是从开始通过任意个$\epsilo">
 <meta name="keywords" content="编译原理,NFA,DFA">
 <meta property="og:type" content="article">
 <meta property="og:title" content="从正则到NFA到DFA到最小化">
 <meta property="og:url" content="http://yoursite.com/2018/04/19/从正则到NFA到DFA到最小化/index.html">
 <meta property="og:site_name" content="Aitical的个人小站">
-<meta property="og:description" content="获取DFA基础步骤就三步:  从正则到NFA 从NFA用子集构造法到DFA 对DFA进行最小化  构造正则表达式$(ab)(a|b)(ba)$等价的DFA从正则到NFA首先记住几个基本的转化:  在正则表达式中只要反复使用这几个基础的转换就能获得NFA了  从NFA到DFA: 子集构造法子集是对NFA中所有状态的子集,首先初始的一个状态子集是从开始通过任意个$\epsilon$可到达的状态集合,这">
+<meta property="og:description" content="获取DFA基础步骤就三步:  从正则到NFA 从NFA用子集构造法到DFA 对DFA进行最小化  构造正则表达式$(ab)^{}(a^{}|b^{})(ba)^{}$等价的DFA从正则到NFA首先记住几个基本的转化:  在正则表达式中只要反复使用这几个基础的转换就能获得NFA了  从NFA到DFA: 子集构造法子集是对NFA中所有状态的子集,首先初始的一个状态子集是从开始通过任意个$\epsilo">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2018/04/19/从正则到NFA到DFA到最小化/正则到NFA.png">
 <meta property="og:image" content="http://yoursite.com/2018/04/19/从正则到NFA到DFA到最小化/例题1.png">
@@ -96,10 +96,10 @@
 <meta property="og:image" content="http://yoursite.com/2018/04/19/从正则到NFA到DFA到最小化/DFA_2.jpg">
 <meta property="og:image" content="http://yoursite.com/2018/04/19/从正则到NFA到DFA到最小化/最小化.png">
 <meta property="og:image" content="http://yoursite.com/2018/04/19/从正则到NFA到DFA到最小化/DFA最小化.jpg">
-<meta property="og:updated_time" content="2018-04-19T15:01:34.647Z">
+<meta property="og:updated_time" content="2018-04-22T12:57:16.138Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="从正则到NFA到DFA到最小化">
-<meta name="twitter:description" content="获取DFA基础步骤就三步:  从正则到NFA 从NFA用子集构造法到DFA 对DFA进行最小化  构造正则表达式$(ab)(a|b)(ba)$等价的DFA从正则到NFA首先记住几个基本的转化:  在正则表达式中只要反复使用这几个基础的转换就能获得NFA了  从NFA到DFA: 子集构造法子集是对NFA中所有状态的子集,首先初始的一个状态子集是从开始通过任意个$\epsilon$可到达的状态集合,这">
+<meta name="twitter:description" content="获取DFA基础步骤就三步:  从正则到NFA 从NFA用子集构造法到DFA 对DFA进行最小化  构造正则表达式$(ab)^{}(a^{}|b^{})(ba)^{}$等价的DFA从正则到NFA首先记住几个基本的转化:  在正则表达式中只要反复使用这几个基础的转换就能获得NFA了  从NFA到DFA: 子集构造法子集是对NFA中所有状态的子集,首先初始的一个状态子集是从开始通过任意个$\epsilo">
 <meta name="twitter:image" content="http://yoursite.com/2018/04/19/从正则到NFA到DFA到最小化/正则到NFA.png">
 
 
@@ -375,20 +375,20 @@ var _hmt = _hmt || [];
 <li>从NFA用子集构造法到DFA</li>
 <li>对DFA进行最小化</li>
 </ol>
-<h3 id="构造正则表达式-ab-a-b-ba-等价的DFA"><a href="#构造正则表达式-ab-a-b-ba-等价的DFA" class="headerlink" title="构造正则表达式$(ab)(a|b)(ba)$等价的DFA"></a>构造正则表达式$(ab)<em>(a</em>|b<em>)(ba)</em>$等价的DFA</h3><h4 id="从正则到NFA"><a href="#从正则到NFA" class="headerlink" title="从正则到NFA"></a>从正则到NFA</h4><p>首先记住几个基本的转化:</p>
+<h3 id="构造正则表达式-ab-a-b-ba-等价的DFA"><a href="#构造正则表达式-ab-a-b-ba-等价的DFA" class="headerlink" title="构造正则表达式$(ab)^{}(a^{}|b^{})(ba)^{}$等价的DFA"></a>构造正则表达式$(ab)^{<em>}(a^{</em>}|b^{<em>})(ba)^{</em>}$等价的DFA</h3><h4 id="从正则到NFA"><a href="#从正则到NFA" class="headerlink" title="从正则到NFA"></a>从正则到NFA</h4><p>首先记住几个基本的转化:</p>
 <p><img src="/2018/04/19/从正则到NFA到DFA到最小化/正则到NFA.png" alt="正则到NFA"></p>
 <p>在正则表达式中只要反复使用这几个基础的转换就能获得NFA了</p>
 <p><img src="/2018/04/19/从正则到NFA到DFA到最小化/例题1.png" alt="NFA"></p>
-<h4 id="从NFA到DFA-子集构造法"><a href="#从NFA到DFA-子集构造法" class="headerlink" title="从NFA到DFA: 子集构造法"></a>从NFA到DFA: 子集构造法</h4><p>子集是对NFA中所有状态的子集,首先初始的一个状态子集是从开始通过任意个$\epsilon$可到达的状态集合,这里也就是${0,1,3,4,5,6,7,9}$都是只用若干$\epsilon$就可获得的状态</p>
-<p>接着分析每个状态的下一步, 这里只有$a,b$两个字符,对第一个子集中状态在拼接一个$a$后能到达的集合作为下一个子集,也就是$s_{0}={2,4,6,7,9}$,注意是要包含接上一个$a$可到达的状态以及之后可以通过任意个$\epsilon$可到达的状态,详细来看$s_{1}={}$,</p>
+<h4 id="从NFA到DFA-子集构造法"><a href="#从NFA到DFA-子集构造法" class="headerlink" title="从NFA到DFA: 子集构造法"></a>从NFA到DFA: 子集构造法</h4><p>子集是对NFA中所有状态的子集,首先初始的一个状态子集是从开始通过任意个$\epsilon$可到达的状态集合,这里也就是$\lbrace0,1,3,4,5,6,7,9\rbrace$都是只用若干$\epsilon$就可获得的状态</p>
+<p>接着分析每个状态的下一步, 这里只有$a,b$两个字符,对第一个子集中状态在拼接一个$a$后能到达的集合作为下一个子集,也就是$s_{0}=\lbrace2,4,6,7,9\rbrace$,注意是要包含接上一个$a$可到达的状态以及之后可以通过任意个$\epsilon$可到达的状态,详细来看$s_{1}=\lbrace\rbrace$,</p>
 <p>0不可接a,</p>
-<p>1可接a到达2,2后面无$\epsilon$可到状态=&gt;$s_{1}={2}$</p>
+<p>1可接a到达2,2后面无$\epsilon$可到状态=&gt;$s_{1}=$$\lbrace2\rbrace$</p>
 <p>3不可接a,</p>
-<p>4可接a到达4,4后可接$\epsilon$到6,7,9=&gt;$s_{1}={2,4,6,7,9}$</p>
+<p>4可接a到达4,4后可接$\epsilon$到6,7,9=&gt;$s_{1}=\lbrace2,4,6,7,9\rbrace$</p>
 <p>6不可接a</p>
 <p>7不可接a</p>
 <p>9不可接a</p>
-<p>结束=&gt;$s_{1}={2,4,6,7,9}$</p>
+<p>结束=&gt;$s_{1}=\lbrace2,4,6,7,9\rbrace$</p>
 <p>对b的分析也是如此,这样就获得了另一个不同的子集$s_{2}$</p>
 <p>接着对$s_{1},s_{2}$同样分析下去,这题总共有7个不同的状态集合</p>
 <p><img src="/2018/04/19/从正则到NFA到DFA到最小化/NFA到DFA.jpg" alt="DFA子集表"></p>
@@ -403,10 +403,10 @@ var _hmt = _hmt || [];
 <p>死态就是从开始无法到达的状态</p>
 <p>这个例子中就不必最小化了,看下面的例子</p>
 <p><img src="/2018/04/19/从正则到NFA到DFA到最小化/最小化.png" alt="最小化例题"></p>
-<p>首先将所有的状态进行分类,第一步按照接收状态和非接受状态,分为接受状态的$s_{1}={C,D,E,F}$和非接收状态的$s_{2}={S,A,B}$</p>
+<p>首先将所有的状态进行分类,第一步按照接收状态和非接受状态,分为接受状态的$s_{1}={C,D,E,F}$和非接收状态的$s_{2}=\lbrace S,A,B\rbrace$</p>
 <p>接着对$s_{1},s_{2}$继续分类,</p>
 <p>具体操作就是,先看$s_{1}$,其中$C,D,E,F$通过a,b之后的状态都还是在$s_{1}$中,则$CDEF$是一类,可以合并</p>
-<p>再看$s_{2}$,下一步接a时,$S,B$到达A属于$s_{2}$,A到达$C$属于$s_{1}$所以$s_{1}$可以划分为${S,B}$和${A}$,再看${S,B}$,下一步接b时,S到B属于$s_{2}$,B接b到D属于$s_{1}$也就是S,B不属于一类,这样A,S,B不可合并</p>
+<p>再看$s_{2}​$,下一步接a时,$S,B​$到达A属于$s_{2}​$,A到达$C​$属于$s_{1}​$所以$s_{1}​$可以划分为$\lbrace S,B\rbrace​$和$\lbrace A\rbrace​$,再看$\lbrace S,B\rbrace​$,下一步接b时,S到B属于$s_{2}​$,B接b到D属于$s_{1}​$也就是S,B不属于一类,这样A,S,B不可合并</p>
 <p>则最终结果是</p>
 <p><img src="/2018/04/19/从正则到NFA到DFA到最小化/DFA最小化.jpg" alt="最小化DFA"></p>
 
@@ -481,6 +481,10 @@ var _hmt = _hmt || [];
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/21/从正则到NFA到DFA-龙书/" rel="prev" title="从正则到NFA到DFA[龙书]">
+                从正则到NFA到DFA[龙书] <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -561,7 +565,7 @@ var _hmt = _hmt || [];
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -633,7 +637,7 @@ var _hmt = _hmt || [];
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#构造正则表达式-ab-a-b-ba-等价的DFA"><span class="nav-number">1.</span> <span class="nav-text">构造正则表达式$(ab)(a|b)(ba)$等价的DFA</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#从正则到NFA"><span class="nav-number">1.1.</span> <span class="nav-text">从正则到NFA</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#从NFA到DFA-子集构造法"><span class="nav-number">1.2.</span> <span class="nav-text">从NFA到DFA: 子集构造法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#最小化"><span class="nav-number">1.3.</span> <span class="nav-text">最小化</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#构造正则表达式-ab-a-b-ba-等价的DFA"><span class="nav-number">1.</span> <span class="nav-text">构造正则表达式$(ab)^{}(a^{}|b^{})(ba)^{}$等价的DFA</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#从正则到NFA"><span class="nav-number">1.1.</span> <span class="nav-text">从正则到NFA</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#从NFA到DFA-子集构造法"><span class="nav-number">1.2.</span> <span class="nav-text">从NFA到DFA: 子集构造法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#最小化"><span class="nav-number">1.3.</span> <span class="nav-text">最小化</span></a></li></ol></li></ol></div>
             
 
           </div>
