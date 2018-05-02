@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
       <url>
+        <loc>http://aitical.github.io/2018/05/01/Django2-0%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B-%E4%B8%80-%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE/</loc>
+        
+        <lastmod>2018-05-02T07:53:05.451Z</lastmod>
+        
+        </url>
+      
+      <url>
         <loc>http://aitical.github.io/2018/05/01/pipenv%E4%BD%BF%E7%94%A8%E7%AE%80%E8%AE%B0/</loc>
         
         <lastmod>2018-05-01T15:24:09.186Z</lastmod>
