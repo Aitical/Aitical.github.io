@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="python,Django,博客教程," />
 
 
 
@@ -82,6 +82,7 @@
 
 
 <meta name="description" content="使用pipenv创建项目12mkdir projectcd project 进入环境目录后 12pipenv install djangopipenv shell 这样就进入了虚拟环境, pipenv大大简化了之前配置虚拟环境的操作 123django-admin startproject myblogcd myblogdjango-admin startapp blog 这样就创建了我们的Dja">
+<meta name="keywords" content="python,Django,博客教程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Django2.0博客教程(一)_创建项目">
 <meta property="og:url" content="http://yoursite.com/2018/05/01/Django2-0博客教程-一-创建项目/index.html">
@@ -89,7 +90,7 @@
 <meta property="og:description" content="使用pipenv创建项目12mkdir projectcd project 进入环境目录后 12pipenv install djangopipenv shell 这样就进入了虚拟环境, pipenv大大简化了之前配置虚拟环境的操作 123django-admin startproject myblogcd myblogdjango-admin startapp blog 这样就创建了我们的Dja">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2018/05/01/Django2-0博客教程-一-创建项目/初始化项目.png">
-<meta property="og:updated_time" content="2018-05-02T07:53:05.451Z">
+<meta property="og:updated_time" content="2018-05-02T13:07:49.935Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Django2.0博客教程(一)_创建项目">
 <meta name="twitter:description" content="使用pipenv创建项目12mkdir projectcd project 进入环境目录后 12pipenv install djangopipenv shell 这样就进入了虚拟环境, pipenv大大简化了之前配置虚拟环境的操作 123django-admin startproject myblogcd myblogdjango-admin startapp blog 这样就创建了我们的Dja">
@@ -313,6 +314,28 @@ var _hmt = _hmt || [];
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Django博客教程/" itemprop="url" rel="index">
+                    <span itemprop="name">Django博客教程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -360,7 +383,8 @@ var _hmt = _hmt || [];
 <p>对应修改上面的mysql信息即可</p>
 <p>要注意的是</p>
 <ol>
-<li><p><code>CHARSET</code>是指定编码格式,这个如果显示设置一定要跟database中指定的一样,新版的mysql已经是默认<code>utf8</code>了,如果有很老的版本还是拉丁系列的编码或者是指定了其他的编码,在这里指定成<code>utf8</code>就可能会出现乱码,Django默认是utf8格式,所以如果不是特别指定,数据库和Django都采用默认即可,如果你想要抓取一些评论信息,由于评论中有表情符号,要采用<code>utf8mb4</code>,数据库和django都显示设置即可</p>
+<li><p><code>CHARSET</code>是指定编码格式, 这里的编码一定要和数据库创建时的编码一致才行,否做就会出现乱码报错,创建数据库时最好就手动指定编码格式(如下),如果你想要抓取一些评论信息,由于评论中有表情符号,要采用<code>utf8mb4</code>,数据库和django都指定成<code>utf8mb4</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create database dbname character set &apos;utf8&apos;;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>切换成Mysql引擎后Django运行可能会提示没有<code>mysqlclient</code>,如果pipenv安装报错,请尝试先安装</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sduo apt install libmysqlclinet-dev</span><br></pre></td></tr></table></figure>
@@ -424,6 +448,16 @@ var _hmt = _hmt || [];
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+            <a href="/tags/Django/" rel="tag"># Django</a>
+          
+            <a href="/tags/博客教程/" rel="tag"># 博客教程</a>
+          
+        </div>
       
 
       
@@ -534,7 +568,7 @@ var _hmt = _hmt || [];
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -545,7 +579,7 @@ var _hmt = _hmt || [];
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
