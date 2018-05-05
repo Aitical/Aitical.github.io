@@ -90,7 +90,7 @@
 <meta property="og:description" content="使用pipenv创建项目12mkdir projectcd project 进入环境目录后 12pipenv install djangopipenv shell 这样就进入了虚拟环境, pipenv大大简化了之前配置虚拟环境的操作 123django-admin startproject myblogcd myblogdjango-admin startapp blog 这样就创建了我们的Dja">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2018/05/01/Django2-0博客教程-一-创建项目/初始化项目.png">
-<meta property="og:updated_time" content="2018-05-05T07:04:24.053Z">
+<meta property="og:updated_time" content="2018-05-05T08:51:55.249Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Django2.0博客教程(一)_创建项目">
 <meta name="twitter:description" content="使用pipenv创建项目12mkdir projectcd project 进入环境目录后 12pipenv install djangopipenv shell 这样就进入了虚拟环境, pipenv大大简化了之前配置虚拟环境的操作 123django-admin startproject myblogcd myblogdjango-admin startapp blog 这样就创建了我们的Dja">
@@ -400,7 +400,7 @@ var _hmt = _hmt || [];
 <p>注意<code>DIRS</code>是模板的路径,可以自己指定,但为了方便在项目目录下创建<code>templates</code>文件夹即可</p>
 <p>其他部分<code>BACKEND</code>和<code>OPTIONS</code>可以更换成其他的模板引擎,博客项目用默认的</p>
 <p>如果用的PyCharm创建会默认生成模板路径,没有的话手动添加一下路径</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'DIRS'</span>: [BASE_DIR + <span class="string">'/templates'</span>, ],</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'DIRS'</span>: [os.path.join(BASE_DIR, <span class="string">'templates'</span>), ],</span><br></pre></td></tr></table></figure>
 <h4 id="STATIC"><a href="#STATIC" class="headerlink" title="STATIC"></a>STATIC</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">STATIC_URL = <span class="string">'/static/'</span></span><br></pre></td></tr></table></figure>
 <p>指定app中静态文件路径,在上线之后,Django会把静态文件全部打包到一个路径下方便部署</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">STATIC_URL = <span class="string">'/static/'</span></span><br><span class="line"><span class="comment"># STATIC_ROOT 文件夹 是用来将所有STATICFILES_DIRS中所有文件夹中的文件，以及各app中static中的文件都复制过来</span></span><br><span class="line">STATIC_ROOT = os.path.join(BASE_DIR, <span class="string">'collected_static'</span>)</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 用来存放项目中公用的静态文件，里面不能包含 STATIC_ROOT</span></span><br><span class="line">STATICFILES_DIRS = (</span><br><span class="line">    os.path.join(BASE_DIR, <span class="string">"common_static"</span>),</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
