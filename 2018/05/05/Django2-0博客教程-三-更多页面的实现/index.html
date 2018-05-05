@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon16.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="python,Django,博客教程," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Aitical的个人小站" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="文章详情/分类/标签/归档视图博客的主页已经可以运行了,这里就给博客添加更多的功能,也就是在views.py中添加更多的视图函数 文章详情函数修改blog/views.py,添加detail函数,用于显示文章内容 123456789101112131415def detail(request, post_id):    &quot;&quot;&quot;    文章详情页    :param request: 请求    :">
+<meta name="keywords" content="python,Django,博客教程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Django2-0博客教程(三)更多页面的实现">
+<meta property="og:url" content="http://yoursite.com/2018/05/05/Django2-0博客教程-三-更多页面的实现/index.html">
+<meta property="og:site_name" content="Aitical的个人小站">
+<meta property="og:description" content="文章详情/分类/标签/归档视图博客的主页已经可以运行了,这里就给博客添加更多的功能,也就是在views.py中添加更多的视图函数 文章详情函数修改blog/views.py,添加detail函数,用于显示文章内容 123456789101112131415def detail(request, post_id):    &quot;&quot;&quot;    文章详情页    :param request: 请求    :">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2018/05/05/Django2-0博客教程-三-更多页面的实现/分类.png">
+<meta property="og:updated_time" content="2018-05-05T08:39:54.633Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Django2-0博客教程(三)更多页面的实现">
+<meta name="twitter:description" content="文章详情/分类/标签/归档视图博客的主页已经可以运行了,这里就给博客添加更多的功能,也就是在views.py中添加更多的视图函数 文章详情函数修改blog/views.py,添加detail函数,用于显示文章内容 123456789101112131415def detail(request, post_id):    &quot;&quot;&quot;    文章详情页    :param request: 请求    :">
+<meta name="twitter:image" content="http://yoursite.com/2018/05/05/Django2-0博客教程-三-更多页面的实现/分类.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?13243af549c2c9507d31491dc2d75423";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/05/05/Django2-0博客教程-三-更多页面的实现/"/>
+
+
+
+
+
+  <title>Django2-0博客教程(三)更多页面的实现 | Aitical的个人小站</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Aitical的个人小站</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">一直在走,走灰多少太阳</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/05/Django2-0博客教程-三-更多页面的实现/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="吴刚">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/img.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Aitical的个人小站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Django2-0博客教程(三)更多页面的实现</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-05T14:47:13+08:00">
+                2018-05-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Django博客教程/" itemprop="url" rel="index">
+                    <span itemprop="name">Django博客教程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="文章详情-分类-标签-归档视图"><a href="#文章详情-分类-标签-归档视图" class="headerlink" title="文章详情/分类/标签/归档视图"></a>文章详情/分类/标签/归档视图</h3><p>博客的主页已经可以运行了,这里就给博客添加更多的功能,也就是在<code>views.py</code>中添加更多的视图函数</p>
+<h4 id="文章详情函数"><a href="#文章详情函数" class="headerlink" title="文章详情函数"></a>文章详情函数</h4><p>修改<code>blog/views.py</code>,添加<code>detail</code>函数,用于显示文章内容</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">detail</span><span class="params">(request, post_id)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    文章详情页</span></span><br><span class="line"><span class="string">    :param request: 请求</span></span><br><span class="line"><span class="string">    :param post_id: 文章id</span></span><br><span class="line"><span class="string">    :return: post page</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        post = Article.objects.get(id=str(post_id))     <span class="comment"># 通过id获取文章实体</span></span><br><span class="line">        post.viewed()                                   <span class="comment"># 更新浏览次数</span></span><br><span class="line">        tags = post.tags.all()                          <span class="comment"># 获取文章对应所有标签</span></span><br><span class="line">    <span class="keyword">except</span> Article.DoesNotExist:</span><br><span class="line">        <span class="keyword">raise</span> Http404</span><br><span class="line">    <span class="keyword">return</span> render(request, <span class="string">'post.html'</span>, &#123;<span class="string">'post'</span>: post,</span><br><span class="line">                                         <span class="string">'tags'</span>: tags,&#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="分类函数"><a href="#分类函数" class="headerlink" title="分类函数"></a>分类函数</h4><p>添加<code>category</code>函数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">category</span><span class="params">(request, category_id)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    文章详情页</span></span><br><span class="line"><span class="string">    :param request: 请求</span></span><br><span class="line"><span class="string">    :param category_id: 分类id</span></span><br><span class="line"><span class="string">    :return: category page</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    posts = Article.objects.filter(category_id=str(category_id))</span><br><span class="line">    category = categories.get(id=str(category_id))    <span class="comment"># 通过id获取分类实体</span></span><br><span class="line">    paginator = Paginator(posts, settings.PAGE_NUM)   <span class="comment"># 获取文章对应所有标签</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        page = request.GET.get(<span class="string">'page'</span>)  			 <span class="comment"># 获取URL中page参数的值</span></span><br><span class="line">        post_list = paginator.page(page)</span><br><span class="line">    <span class="keyword">except</span> PageNotAnInteger:</span><br><span class="line">        post_list = paginator.page(<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">except</span> EmptyPage:</span><br><span class="line">        post_list = paginator.page(paginator.num_pages)</span><br><span class="line">    <span class="keyword">return</span> render(request, <span class="string">'category.html'</span>, &#123;<span class="string">'post_list'</span>: post_list,</span><br><span class="line">                                             <span class="string">'category'</span>: category,&#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="标签函数"><a href="#标签函数" class="headerlink" title="标签函数"></a>标签函数</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">tag</span><span class="params">(request, tag)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    文章详情页</span></span><br><span class="line"><span class="string">    :param request: 请求</span></span><br><span class="line"><span class="string">    :param tag: 标签内容</span></span><br><span class="line"><span class="string">    :return: tag page</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    posts = Article.objects.filter(tags__name__contains=tag)</span><br><span class="line">    paginator = Paginator(posts, settings.PAGE_NUM)</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        page = request.GET.get(<span class="string">'page'</span>)</span><br><span class="line">        post_list = paginator.page(page)</span><br><span class="line">    <span class="keyword">except</span> PageNotAnInteger:</span><br><span class="line">        post_list = paginator.page(<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">except</span> EmptyPage:</span><br><span class="line">        post_list = paginator.page(paginator.num_pages)</span><br><span class="line">    <span class="keyword">return</span> render(request, <span class="string">'tag.html'</span>, &#123;<span class="string">'post_list'</span>: post_list,</span><br><span class="line">                                        <span class="string">'tag'</span>: tag&#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="归档函数"><a href="#归档函数" class="headerlink" title="归档函数"></a>归档函数</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">archives</span><span class="params">(request, year, month)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    归档页面</span></span><br><span class="line"><span class="string">    :param request: 请求</span></span><br><span class="line"><span class="string">    :param year: 年份</span></span><br><span class="line"><span class="string">    :param month: 月份</span></span><br><span class="line"><span class="string">    :return: archives page</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    posts = Article.objects.filter(pub_time__year=year, pub_time__month=month).order_by(<span class="string">'-pub_time'</span>)</span><br><span class="line">    paginator = Paginator(posts, settings.PAGE_NUM)  <span class="comment"># 每页显示数量</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        page = request.GET.get(<span class="string">'page'</span>)  <span class="comment"># 获取URL中page参数的值</span></span><br><span class="line">        post_list = paginator.page(page)</span><br><span class="line">    <span class="keyword">except</span> PageNotAnInteger:</span><br><span class="line">        post_list = paginator.page(<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">except</span> EmptyPage:</span><br><span class="line">        post_list = paginator.page(paginator.num_pages)</span><br><span class="line">    <span class="keyword">return</span> render(request, <span class="string">'archive.html'</span>, &#123;</span><br><span class="line">        <span class="string">'post_list'</span>: post_list,</span><br><span class="line">        <span class="string">'category_list'</span>: categories,</span><br><span class="line">        <span class="string">'months'</span>: months,</span><br><span class="line">        <span class="string">'year_month'</span>: year+<span class="string">'年'</span>+month+<span class="string">'月'</span></span><br><span class="line">        &#125;</span><br><span class="line">    )</span><br></pre></td></tr></table></figure>
+<h3 id="添加路由"><a href="#添加路由" class="headerlink" title="添加路由"></a>添加路由</h3><p>修改<code>blog/urls.py</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.urls <span class="keyword">import</span> path</span><br><span class="line"><span class="keyword">from</span> . <span class="keyword">import</span> views</span><br><span class="line"></span><br><span class="line">urlpatterns = [</span><br><span class="line">    path(<span class="string">''</span>, views.home, name=<span class="string">'home'</span>),</span><br><span class="line">    path(<span class="string">'home/'</span>, views.home, name=<span class="string">'home'</span>),</span><br><span class="line">    path(<span class="string">'articles/&lt;int:post_id&gt;/'</span>, views.detail, name=<span class="string">'detail'</span>),</span><br><span class="line">    path(<span class="string">'category/&lt;int:category_id&gt;/'</span>, views.category, name=<span class="string">'category'</span>),</span><br><span class="line">    path(<span class="string">'tag/&lt;str:tag&gt;/'</span>, views.tag, name=<span class="string">'tag'</span>),</span><br><span class="line">    path(<span class="string">'archives/&lt;str:year&gt;/&lt;str:month&gt;'</span>, views.archives, name=<span class="string">'archives'</span>),</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>为刚刚新写的几个函数添加对应的路由</p>
+<p>启动项目,添加一些标签/分类.,创建文章就可以看到效果了</p>
+<p><img src="/2018/05/05/Django2-0博客教程-三-更多页面的实现/分类.png" alt=""></p>
+<h3 id="完善显示部分"><a href="#完善显示部分" class="headerlink" title="完善显示部分"></a>完善显示部分</h3><p>在<code>base.html</code>中显示分类和归档详情,但是上述几个视图函数仅仅实现了自己的功能,并没有传入分类和归档信息,这里修改<code>blog/views.py</code>添加上相应信息</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> ...</span><br><span class="line"></span><br><span class="line"><span class="comment"># 两个全局变量,后面每个函数都会用到</span></span><br><span class="line">categories = Category.objects.all()  							<span class="comment"># 获取全部的分类对象</span></span><br><span class="line">months = Article.objects.values_list(<span class="string">'pub_time'</span>, flat=<span class="keyword">True</span>)		  <span class="comment"># 获取文章时间归档</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 在每个函数最后的传参部分添加 months和category_list参数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">home</span><span class="params">(request)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    主页视图</span></span><br><span class="line"><span class="string">    :param request: 请求</span></span><br><span class="line"><span class="string">    :return: homepage</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    posts = Article.objects.all()                       <span class="comment"># 获取全部的Article对象</span></span><br><span class="line">    paginator = Paginator(posts, settings.PAGE_NUM)     <span class="comment"># 每页显示数量，对应settings.py中的PAGE_NUM</span></span><br><span class="line">    page = request.GET.get(<span class="string">'page'</span>)                      <span class="comment"># 获取URL中page参数的值</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        post_list = paginator.page(page)</span><br><span class="line">    <span class="keyword">except</span> PageNotAnInteger:</span><br><span class="line">        post_list = paginator.page(<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">except</span> EmptyPage:</span><br><span class="line">        post_list = paginator.page(paginator.num_pages)</span><br><span class="line">    <span class="keyword">return</span> render(request, <span class="string">'home.html'</span>, &#123;<span class="string">'post_list'</span>: post_list,</span><br><span class="line">                                         <span class="string">'months'</span>: months,			   <span class="comment"># 注意添加的months</span></span><br><span class="line">                                         <span class="string">'category_list'</span>: categories&#125;)  <span class="comment"># 注意添加的category_list</span></span><br><span class="line"><span class="comment"># 每个函数都添加这两个变量</span></span><br></pre></td></tr></table></figure>
+<p>完整的最终代码可以在github的项目中看到,到这页面显示部分就完成了</p>
+<h4 id="踩坑记录"><a href="#踩坑记录" class="headerlink" title="踩坑记录"></a>踩坑记录</h4><p>如果后端使用的是MySql,可能会在在归档页面按照年月查询不到文章列表,这时由于Mysql中的时区转化问题导致查询结果总是为<code>NULL</code></p>
+<p>解决办法:执行如下命令</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql_tzinfo_to_sql /usr/share/zoneinfo | mysql -u root mysql -p</span><br></pre></td></tr></table></figure>
+<p>详细解决过程我是参考了这篇<a href="http://chowyi.com/2017/09/19/Django%E4%BD%BF%E7%94%A8MySQL%E5%90%8E%E7%AB%AF%E6%97%A5%E6%9C%9F%E4%B8%8D%E8%83%BD%E6%8C%89%E6%9C%88%E8%BF%87%E6%BB%A4%E7%9A%84%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" target="_blank" rel="noopener">博客</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>想吃辣条~\(≧▽≦)/~啦啦啦</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="吴刚 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="吴刚 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+            <a href="/tags/Django/" rel="tag"># Django</a>
+          
+            <a href="/tags/博客教程/" rel="tag"># 博客教程</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/02/Django2-0博客教程-二-初步搭建博客/" rel="next" title="Django2.0博客教程(二)_初步搭建博客">
+                <i class="fa fa-chevron-left"></i> Django2.0博客教程(二)_初步搭建博客
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/img.jpg"
+                alt="吴刚" />
+            
+              <p class="site-author-name" itemprop="name">吴刚</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/Aitical" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#文章详情-分类-标签-归档视图"><span class="nav-number">1.</span> <span class="nav-text">文章详情/分类/标签/归档视图</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#文章详情函数"><span class="nav-number">1.1.</span> <span class="nav-text">文章详情函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分类函数"><span class="nav-number">1.2.</span> <span class="nav-text">分类函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#标签函数"><span class="nav-number">1.3.</span> <span class="nav-text">标签函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#归档函数"><span class="nav-number">1.4.</span> <span class="nav-text">归档函数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加路由"><span class="nav-number">2.</span> <span class="nav-text">添加路由</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#完善显示部分"><span class="nav-number">3.</span> <span class="nav-text">完善显示部分</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#踩坑记录"><span class="nav-number">3.1.</span> <span class="nav-text">踩坑记录</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">吴刚</span>
+
+  
+</div>
+
+
+
+<span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+<span id="busuanzi_container_site_uv">
+  本站访客数<span id="busuanzi_value_site_uv"></span>人次
+</span>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="custom_mathjax_source">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+  
+
+
+  
+
+  
+
+</body>
+</html>
