@@ -85,18 +85,18 @@
 <meta name="keywords" content="机器学习,PCA">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PCA(主成成分分析)学习笔记">
-<meta property="og:url" content="http://yoursite.com/2018/05/10/PCA-主成成分分析-学习与实现/index.html">
+<meta property="og:url" content="http://yoursite.com/2018/05/10/PCA-主成成分分析-学习笔记/index.html">
 <meta property="og:site_name" content="Aitical的个人小站">
 <meta property="og:description" content="问题做机器学习训练时会遇到这样一个:原始数据特征的维度特别高,不利于模型的训练.这时候我们需要对原始数据的特征向量进行降维处理，然后将降维后的数据输入到模型中进行训练,得出最终的训练模型.比如:  比如拿到一个汽车的样本，里面既有以“千米/每小时”度量的最大速度特征，也有“英里/小时”的最大速度特征，显然这两个特征有一个多余。  PCA就是用来对高维度数据进行降维,但是降维或多或少地会带来一定的信">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2018/05/10/PCA-主成成分分析-学习与实现/PCA-主成成分分析-学习笔记/05.png">
-<meta property="og:image" content="http://yoursite.com/2018/05/10/PCA-主成成分分析-学习与实现/PCA-主成成分分析-学习笔记/基变换.png">
-<meta property="og:image" content="http://yoursite.com/2018/05/10/PCA-主成成分分析-学习与实现/PCA-主成成分分析-学习笔记/协方差矩阵.png">
+<meta property="og:image" content="http://yoursite.com/2018/05/10/PCA-主成成分分析-学习笔记/05.png">
+<meta property="og:image" content="http://yoursite.com/2018/05/10/PCA-主成成分分析-学习笔记/基变换.png">
+<meta property="og:image" content="http://yoursite.com/2018/05/10/PCA-主成成分分析-学习笔记/协方差矩阵.png">
 <meta property="og:updated_time" content="2018-05-11T02:27:34.976Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PCA(主成成分分析)学习笔记">
 <meta name="twitter:description" content="问题做机器学习训练时会遇到这样一个:原始数据特征的维度特别高,不利于模型的训练.这时候我们需要对原始数据的特征向量进行降维处理，然后将降维后的数据输入到模型中进行训练,得出最终的训练模型.比如:  比如拿到一个汽车的样本，里面既有以“千米/每小时”度量的最大速度特征，也有“英里/小时”的最大速度特征，显然这两个特征有一个多余。  PCA就是用来对高维度数据进行降维,但是降维或多或少地会带来一定的信">
-<meta name="twitter:image" content="http://yoursite.com/2018/05/10/PCA-主成成分分析-学习与实现/PCA-主成成分分析-学习笔记/05.png">
+<meta name="twitter:image" content="http://yoursite.com/2018/05/10/PCA-主成成分分析-学习笔记/05.png">
 
 
 
@@ -139,7 +139,7 @@ var _hmt = _hmt || [];
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/10/PCA-主成成分分析-学习与实现/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/10/PCA-主成成分分析-学习笔记/"/>
 
 
 
@@ -276,7 +276,7 @@ var _hmt = _hmt || [];
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/10/PCA-主成成分分析-学习与实现/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/10/PCA-主成成分分析-学习笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="吴刚">
@@ -385,14 +385,14 @@ var _hmt = _hmt || [];
 </blockquote>
 <p>例如，(1,1)和(-1,1)也可以成为一组基。一般来说，我们希望基的模是1，因为从内积的意义可以看到，如果基的模是1,实际上，对应任何一个向量我们总可以找到其同方向上模为1的向量,只要让两个分量分别除以模即可.得到单位基向量$(\frac{1}{\sqrt{2}},\frac{1}{\sqrt{2}}),(-\frac{1}{\sqrt{2}},\frac{1}{\sqrt{2}})$</p>
 <p>现在，我们想获得(3,2)在新基上的坐标，即在两个方向上的投影矢量值，那么根据内积的几何意义，我们只要分别计算(3,2)和两个基的内积，不难得到新的坐标为$(\frac{5}{\sqrt{2}},-\frac{1}{\sqrt{2}})$下图给出了新的基以及(3,2)在新基上坐标值的示意图：</p>
-<p><img src="/2018/05/10/PCA-主成成分分析-学习与实现/PCA-主成成分分析-学习笔记/05.png" alt="基转化"></p>
+<p><img src="/2018/05/10/PCA-主成成分分析-学习笔记/05.png" alt="基转化"></p>
 <h4 id="向量基变换"><a href="#向量基变换" class="headerlink" title="向量基变换"></a>向量基变换</h4><blockquote>
 <p>两个矩阵相乘的意义是将右边矩阵中的每一列列向量变换到左边矩阵中每一行行向量为基所表示的空间中去</p>
 </blockquote>
 <p>对于更一般的情况,$N$维空间$m$个向量进行基变换,变换到$R$个$N$维向量为基的空间中,</p>
 <p>将基向量按行组成矩阵$A=(p_{1},p_{2},\cdots,p_{N})^{T}$,其中$p_{i}={p_{i1},p_{i2},\cdots,p_{i_N}}$</p>
 <p>将m个N维向量按列组成矩阵$B$,则$A\cdot B$就是变换后的结果组成的矩阵</p>
-<p><img src="/2018/05/10/PCA-主成成分分析-学习与实现/PCA-主成成分分析-学习笔记/基变换.png" alt="基变换公式"></p>
+<p><img src="/2018/05/10/PCA-主成成分分析-学习笔记/基变换.png" alt="基变换公式"></p>
 <p>行向量$p_{i}$表示第i个基,列向量$x_{j}$就表示第j个向量,右侧矩阵对应m列也就是变换之后的m个R维向量</p>
 <p>由于这里R可以小于N,所以也就实现了降维.</p>
 <h4 id="降维的约束条件"><a href="#降维的约束条件" class="headerlink" title="降维的约束条件"></a>降维的约束条件</h4><p>到上面的基变换我们也就初步可以实现降维了,但是现在的问题是怎样降维才是最好的,使损失最小?例如,有$(2,1),(0,1)$这两个向量,想降到一维,也就是投影到某个方向的直线上,如果选取x轴方向就是两个点0,2,但如果选取y轴方向,两个点的变换结果就重合了,这时候就损失掉了一个点,这样的变换就是不好的,所以这里就要解决这样的问题,让变换之后的结果尽可能多的保留.</p>
@@ -401,7 +401,7 @@ var _hmt = _hmt || [];
 <p>到这就找到降维的优化目标:<strong>从$N$维降到$R$维时,选取$R$个正交基使得变换之后各字段方差最大,各自间协方差为0</strong></p>
 <h4 id="协方差矩阵"><a href="#协方差矩阵" class="headerlink" title="协方差矩阵"></a>协方差矩阵</h4><p>到这里,引入协方差矩阵,对于矩阵$X$称$C = \frac{1}{m}XX^{T}$是X的协方差矩阵</p>
 <p>如m个二维向量组成<br>$$<br>X =\begin{pmatrix} x_{1} &amp; x_{2}  &amp; \cdots &amp;x_{m} \\<br>y_{1} &amp; y_{2}  &amp; \cdots &amp;y_{m}<br>\end{pmatrix}<br>$$<br>求出协方差矩阵</p>
-<p><img src="/2018/05/10/PCA-主成成分分析-学习与实现/PCA-主成成分分析-学习笔记/协方差矩阵.png" alt="协方差矩阵"></p>
+<p><img src="/2018/05/10/PCA-主成成分分析-学习笔记/协方差矩阵.png" alt="协方差矩阵"></p>
 <p>协方差矩阵中完美包含了上面讨论的两个因素,方差和协方差,并且对角线上是方差,此外i行j列与j行i列是同一个协方差</p>
 <h4 id="协方差矩阵对角化"><a href="#协方差矩阵对角化" class="headerlink" title="协方差矩阵对角化"></a>协方差矩阵对角化</h4><p>上面协方差矩阵引入之后,就可以发现,优化降维条件就是对协方差矩阵对角化,除了对角线外其他元素都是0(协方差为0),然后按照对角线上元素(方差)从大到小选取前R个,就是我们降维之后的R个正交基.</p>
 <p>验证:假设原始$X$对应的协方差矩阵$C$,$P$是一组基按行组成的矩阵(降维的矩阵),设结果为Y,$Y=P\cdot X$,则表示Y的协方差D可得:<br>$$<br>D = \frac{1}{m}YY^{T}<br>=\frac{1}{m}PXX^{T}P^{T}<br>=P(\frac{1}{m}XX^{T})P^{T}<br>=PCP^{T}<br>$$<br>这也就验证了目标基组成的矩阵就是让协方差对角化的矩阵P,只要找到对角矩阵,然后按照对角元素从大到小选取前R个,即可找到变换的R维基,接着就是求解矩阵对角化,详细内容可以自己看一下线代里面的推到,这里就博客内容简要整理.</p>
