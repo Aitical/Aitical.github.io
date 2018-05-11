@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon16.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="机器学习,PCA," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Aitical的个人小站" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="问题做机器学习训练时会遇到这样一个:原始数据特征的维度特别高,不利于模型的训练.这时候我们需要对原始数据的特征向量进行降维处理，然后将降维后的数据输入到模型中进行训练,得出最终的训练模型.比如:  比如拿到一个汽车的样本，里面既有以“千米/每小时”度量的最大速度特征，也有“英里/小时”的最大速度特征，显然这两个特征有一个多余。  PCA就是用来对高维度数据进行降维,但是降维或多或少地会带来一定的信">
+<meta name="keywords" content="机器学习,PCA">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PCA(主成成分分析)学习笔记">
+<meta property="og:url" content="http://yoursite.com/2018/05/10/PCA-主成成分分析-学习与实现/index.html">
+<meta property="og:site_name" content="Aitical的个人小站">
+<meta property="og:description" content="问题做机器学习训练时会遇到这样一个:原始数据特征的维度特别高,不利于模型的训练.这时候我们需要对原始数据的特征向量进行降维处理，然后将降维后的数据输入到模型中进行训练,得出最终的训练模型.比如:  比如拿到一个汽车的样本，里面既有以“千米/每小时”度量的最大速度特征，也有“英里/小时”的最大速度特征，显然这两个特征有一个多余。  PCA就是用来对高维度数据进行降维,但是降维或多或少地会带来一定的信">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2018/05/10/PCA-主成成分分析-学习与实现/PCA-主成成分分析-学习笔记/05.png">
+<meta property="og:image" content="http://yoursite.com/2018/05/10/PCA-主成成分分析-学习与实现/PCA-主成成分分析-学习笔记/基变换.png">
+<meta property="og:image" content="http://yoursite.com/2018/05/10/PCA-主成成分分析-学习与实现/PCA-主成成分分析-学习笔记/协方差矩阵.png">
+<meta property="og:updated_time" content="2018-05-11T02:27:34.976Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="PCA(主成成分分析)学习笔记">
+<meta name="twitter:description" content="问题做机器学习训练时会遇到这样一个:原始数据特征的维度特别高,不利于模型的训练.这时候我们需要对原始数据的特征向量进行降维处理，然后将降维后的数据输入到模型中进行训练,得出最终的训练模型.比如:  比如拿到一个汽车的样本，里面既有以“千米/每小时”度量的最大速度特征，也有“英里/小时”的最大速度特征，显然这两个特征有一个多余。  PCA就是用来对高维度数据进行降维,但是降维或多或少地会带来一定的信">
+<meta name="twitter:image" content="http://yoursite.com/2018/05/10/PCA-主成成分分析-学习与实现/PCA-主成成分分析-学习笔记/05.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?13243af549c2c9507d31491dc2d75423";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/05/10/PCA-主成成分分析-学习与实现/"/>
+
+
+
+
+
+  <title>PCA(主成成分分析)学习笔记 | Aitical的个人小站</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Aitical的个人小站</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">一直在走,走灰多少太阳</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/10/PCA-主成成分分析-学习与实现/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="吴刚">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/img.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Aitical的个人小站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">PCA(主成成分分析)学习笔记</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-10T16:23:46+08:00">
+                2018-05-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/机器学习/" itemprop="url" rel="index">
+                    <span itemprop="name">机器学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>做机器学习训练时会遇到这样一个:原始数据特征的维度特别高,不利于模型的训练.这时候我们需要对原始数据的特征向量进行降维处理，然后将降维后的数据输入到模型中进行训练,得出最终的训练模型.<br>比如:</p>
+<blockquote>
+<p>比如拿到一个汽车的样本，里面既有以“千米/每小时”度量的最大速度特征，也有“英里/小时”的最大速度特征，显然这两个特征有一个多余。</p>
+</blockquote>
+<p>PCA就是用来对高维度数据进行降维,但是降维或多或少地会带来一定的信息损失,所以在实现PCA的时候要用到一定的策略减小损失–最大方差投影</p>
+<h2 id="PCA的实现"><a href="#PCA的实现" class="headerlink" title="PCA的实现"></a>PCA的实现</h2><h3 id="算法步骤"><a href="#算法步骤" class="headerlink" title="算法步骤"></a>算法步骤</h3><p>设有 m 条 n 维数据。<br>1）将原始数据按列组成 n 行 m 列矩阵 $X$<br>2）将$X$的每一行(代表一个属性字段)进行零均值化,即减去这一行的均值<br>3）求出协方差矩阵$C=\frac{1}{m}X\cdot X^{T}$<br>4）求出协方差矩阵的特征值及对应的特征向量<br>5）将特征向量按对应特征值大小从上到下按行排列成矩阵，取前 k 行组成矩阵 $P$<br>6）$Y = P \cdot X$即为降维到 k 维后的数据</p>
+<h3 id="数学基础"><a href="#数学基础" class="headerlink" title="数学基础"></a>数学基础</h3><p>这部分是为了便于理解$PCA$</p>
+<h4 id="数据的向量表示"><a href="#数据的向量表示" class="headerlink" title="数据的向量表示"></a>数据的向量表示</h4><p>一般情况下,数据都是一条一条记录的形式展现,比如</p>
+<blockquote>
+<p>淘宝店2012年全年的流量及交易情况中的一条记录如下</p>
+<p>(日期, 浏览量, 访客数, 下单数, 成交数, 成交金额)</p>
+</blockquote>
+<p>由于日期是标记量,这里只关注后面的几个度量值$(500,240,25,13,2312.15)$这样就是一条数据的向量表示,习惯上我们把输入数据表示成列向量,也就是<br>$$<br>x = (500,240,25,13,2312.15)^{T}<br>$$<br>这样对于m行的n维数据就可以表示成<br>$$<br>X = (x_{1}, x_{2},\cdots,x_{n})<br>$$<br>$x_{i}$都是列向量</p>
+<h4 id="向量的内积"><a href="#向量的内积" class="headerlink" title="向量的内积"></a>向量的内积</h4><p>向量$A=(a_{1}, a_{2},\cdots,a_{n})^{T}$与向量$B=(b_{1}, b_{2}, \cdots, b_{n})^{T}$的内积表示如下:<br>$$<br>A\cdot B=a_{1}b_{1}+a_{2}b_{2}+\cdots+a_{n}b_{n}=\sum_{i=1}^{n}a_{i}b_{i}<br>$$<br>为了方便看到几何关系,把内积写成$A\cdot B=|A||B|\cos(\alpha)$内积也就是A在B方向上的投影,当B的模为1的时候就可以简化成<br>$$<br>A\cdot B= |A|\cos(\alpha)<br>$$<br><strong>设向量B的模为1，则A与B的内积值等于A向B所在直线投影的矢量长度</strong></p>
+<h4 id="向量的基"><a href="#向量的基" class="headerlink" title="向量的基"></a>向量的基</h4><p>以二维向量$A=(3,2)$为例,我们很熟悉的表示成直角坐标系的点$(3,2)$,这里要注意的是采用直角坐标系的同时是默认了x,y轴上各自长度为1的单位向量$(1,0), (0,1)$作为基,又上面内积的解释可以看到向量$A =  3(1,0)^{T}+2(0,1)^{T}$.</p>
+<blockquote>
+<p>我们之所以默认选择(1,0)和(0,1)为基，当然是比较方便，因为它们分别是x和y轴正方向上的单位向量，因此就使得二维平面上点坐标和向量一一对应，非常方便。但实际上任何两个线性无关的二维向量都可以成为一组基，所谓线性无关在二维平面内可以直观认为是两个不在一条直线上的向量。</p>
+</blockquote>
+<p>例如，(1,1)和(-1,1)也可以成为一组基。一般来说，我们希望基的模是1，因为从内积的意义可以看到，如果基的模是1,实际上，对应任何一个向量我们总可以找到其同方向上模为1的向量,只要让两个分量分别除以模即可.得到单位基向量$(\frac{1}{\sqrt{2}},\frac{1}{\sqrt{2}}),(-\frac{1}{\sqrt{2}},\frac{1}{\sqrt{2}})$</p>
+<p>现在，我们想获得(3,2)在新基上的坐标，即在两个方向上的投影矢量值，那么根据内积的几何意义，我们只要分别计算(3,2)和两个基的内积，不难得到新的坐标为$(\frac{5}{\sqrt{2}},-\frac{1}{\sqrt{2}})$下图给出了新的基以及(3,2)在新基上坐标值的示意图：</p>
+<p><img src="/2018/05/10/PCA-主成成分分析-学习与实现/PCA-主成成分分析-学习笔记/05.png" alt="基转化"></p>
+<h4 id="向量基变换"><a href="#向量基变换" class="headerlink" title="向量基变换"></a>向量基变换</h4><blockquote>
+<p>两个矩阵相乘的意义是将右边矩阵中的每一列列向量变换到左边矩阵中每一行行向量为基所表示的空间中去</p>
+</blockquote>
+<p>对于更一般的情况,$N$维空间$m$个向量进行基变换,变换到$R$个$N$维向量为基的空间中,</p>
+<p>将基向量按行组成矩阵$A=(p_{1},p_{2},\cdots,p_{N})^{T}$,其中$p_{i}={p_{i1},p_{i2},\cdots,p_{i_N}}$</p>
+<p>将m个N维向量按列组成矩阵$B$,则$A\cdot B$就是变换后的结果组成的矩阵</p>
+<p><img src="/2018/05/10/PCA-主成成分分析-学习与实现/PCA-主成成分分析-学习笔记/基变换.png" alt="基变换公式"></p>
+<p>行向量$p_{i}$表示第i个基,列向量$x_{j}$就表示第j个向量,右侧矩阵对应m列也就是变换之后的m个R维向量</p>
+<p>由于这里R可以小于N,所以也就实现了降维.</p>
+<h4 id="降维的约束条件"><a href="#降维的约束条件" class="headerlink" title="降维的约束条件"></a>降维的约束条件</h4><p>到上面的基变换我们也就初步可以实现降维了,但是现在的问题是怎样降维才是最好的,使损失最小?例如,有$(2,1),(0,1)$这两个向量,想降到一维,也就是投影到某个方向的直线上,如果选取x轴方向就是两个点0,2,但如果选取y轴方向,两个点的变换结果就重合了,这时候就损失掉了一个点,这样的变换就是不好的,所以这里就要解决这样的问题,让变换之后的结果尽可能多的保留.</p>
+<p>显然,变换后的结果要尽可能的分散,离散开来就可以减少损失,这里我们用<strong>方差</strong>衡量上述一维变换的结果的离散程度,方差公式<br>$$<br>Var(x) = \frac{1}{m}\sum_{i=1}^{m}(x_{i}-\mu)^{2}<br>$$<br>由于处理前对数据进行平均值为0的处理,结果简化为<br>$$<br>V(x)=\frac{1}{m}\sum_{i=1}^{m}x^{2}_{i}<br>$$<br>这时候也就是找到一个一维的方向使得结果的方差最大即可</p>
+<p>现在有另外一个问题就是,变换后的维度超过一维的话,比如三维到二维的变换,是要先确定一个维度,再确定另一个,如果都按照这个方差最大来实现,那么这两个维度应该是”重合”的了,显然还要另外一个条件来约束,使得我们确定一个维度之后,其他的维度不能与他”重合”,这里就使用了<strong>协方差</strong>,所谓的”重合”也就是这两个维度过分相关,而我们希望他们最好是没有线性相关性的,而这个相关性就是用协方差表示,<br>$$<br>Cov(X,Y)=E((X-\mu)(Y-\nu))<br>$$<br>同样由于对数据都已经均值为0处理,协方差也可以简化<br>$$<br>Cov(X,Y) = \frac{1}{m}\sum_{i=1}^{m}x_{i}y_{i}<br>$$<br>这样就可以求得两个方向的相关性,让其非线性相关也就是协方差为0,也就是在前一个向量的正交方向上选择,这里也就验证了,我们习惯性建系后选取$(0,1),(1,0)$两个线性无关方向作为基,</p>
+<p>到这就找到降维的优化目标:<strong>从$N$维降到$R$维时,选取$R$个正交基使得变换之后各字段方差最大,各自间协方差为0</strong></p>
+<h4 id="协方差矩阵"><a href="#协方差矩阵" class="headerlink" title="协方差矩阵"></a>协方差矩阵</h4><p>到这里,引入协方差矩阵,对于矩阵$X$称$C = \frac{1}{m}XX^{T}$是X的协方差矩阵</p>
+<p>如m个二维向量组成<br>$$<br>X =\begin{pmatrix} x_{1} &amp; x_{2}  &amp; \cdots &amp;x_{m} \\<br>y_{1} &amp; y_{2}  &amp; \cdots &amp;y_{m}<br>\end{pmatrix}<br>$$<br>求出协方差矩阵</p>
+<p><img src="/2018/05/10/PCA-主成成分分析-学习与实现/PCA-主成成分分析-学习笔记/协方差矩阵.png" alt="协方差矩阵"></p>
+<p>协方差矩阵中完美包含了上面讨论的两个因素,方差和协方差,并且对角线上是方差,此外i行j列与j行i列是同一个协方差</p>
+<h4 id="协方差矩阵对角化"><a href="#协方差矩阵对角化" class="headerlink" title="协方差矩阵对角化"></a>协方差矩阵对角化</h4><p>上面协方差矩阵引入之后,就可以发现,优化降维条件就是对协方差矩阵对角化,除了对角线外其他元素都是0(协方差为0),然后按照对角线上元素(方差)从大到小选取前R个,就是我们降维之后的R个正交基.</p>
+<p>验证:假设原始$X$对应的协方差矩阵$C$,$P$是一组基按行组成的矩阵(降维的矩阵),设结果为Y,$Y=P\cdot X$,则表示Y的协方差D可得:<br>$$<br>D = \frac{1}{m}YY^{T}<br>=\frac{1}{m}PXX^{T}P^{T}<br>=P(\frac{1}{m}XX^{T})P^{T}<br>=PCP^{T}<br>$$<br>这也就验证了目标基组成的矩阵就是让协方差对角化的矩阵P,只要找到对角矩阵,然后按照对角元素从大到小选取前R个,即可找到变换的R维基,接着就是求解矩阵对角化,详细内容可以自己看一下线代里面的推到,这里就博客内容简要整理.</p>
+<p>一个N维实对称方阵(协方差矩阵)一定可以找到N个正交的特征向量,记为$e_{1}, e_{2},\cdots,e_{N}$,按列组成矩阵<br>$$<br>E = (e_{1}, e_{2},\cdots,e_{N})<br>$$<br>对协方差运算<br>$$<br>E^{T}CE = \Lambda=\begin{pmatrix} \lambda_{1} \\<br>&amp; \lambda_{2} \\<br>&amp;&amp; \ddots\\<br>&amp;&amp;&amp;&amp; \lambda_{N}<br>\end{pmatrix}<br>$$<br>$\Lambda$就是目标对角矩阵,其中对角线上元素就是特征向量对应的特征值,所以目标的基就是$E^{T}$</p>
+<h3 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h3><p>$$<br>X = \begin{pmatrix}1 &amp; 1&amp; 2&amp; 4 &amp;2\\<br>1 &amp; 3 &amp; 3&amp;４&amp;４<br>\end{pmatrix}<br>$$</p>
+<p>用$PCA$降维到1维</p>
+<p>首先,对各个字段均值0化处理得到<br>$$<br>X = \begin{pmatrix} -1 &amp; -1 &amp; 0 &amp; 2 &amp; 0\\<br>-2 &amp; 0 &amp; 0 &amp; 1 &amp; 1<br>\end{pmatrix}<br>$$<br>求出协方差矩阵$C$<br>$$<br>C = \frac{1}{5}<br>\begin{pmatrix} -1 &amp; -1 &amp; 0 &amp; 2 &amp; 0\\<br>-2 &amp; 0 &amp; 0 &amp; 1 &amp; 1<br>\end{pmatrix}<br>\begin{pmatrix}<br>-1 &amp; -2 \\<br>-1 &amp; 0 \\<br>0 &amp; 0\\<br>2 &amp; 1\\<br>0 &amp; 1<br>\end{pmatrix}<br>= \begin{pmatrix}<br>\frac{6}{5} &amp; \frac{4}{5}\\<br>\frac{4}{5} &amp; \frac{6}{5}<br>\end{pmatrix}<br>$$<br>求解$C$的特征值:<br>$$<br>\lambda_{1} = 2, \lambda_{2} = 0.4<br>$$<br>降到1维,选取两者中大的那个$\lambda_{1} = 2$</p>
+<p>求解一个特征向量<br>$$<br>c_{1} =\begin{pmatrix}<br>1 \\<br>1<br>\end{pmatrix}<br>$$<br>标准化特征向量后<br>$$<br>c = \begin{pmatrix}<br>\frac{1}{\sqrt{2}} &amp; \frac{1}{\sqrt{2}}<br>\end{pmatrix}<br>$$<br>求出结果<br>$$<br>Y = c\cdot X =\begin{pmatrix} -\frac{3}{\sqrt2} &amp;-\frac{1}{\sqrt2} &amp;0 &amp;\frac{3}{\sqrt2} &amp;-\frac{1}{\sqrt2} &amp;<br>\end{pmatrix}<br>$$</p>
+<hr>
+<p>参考内容:</p>
+<p><a href="http://blog.codinglabs.org/articles/pca-tutorial.html" target="_blank" rel="noopener">PCA数学原理</a></p>
+<p><a href="https://zh.wikipedia.org/wiki/%E5%8D%8F%E6%96%B9%E5%B7%AE" target="_blank" rel="noopener">协方差矩阵</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>想吃辣条~\(≧▽≦)/~啦啦啦</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="吴刚 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="吴刚 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/机器学习/" rel="tag"># 机器学习</a>
+          
+            <a href="/tags/PCA/" rel="tag"># PCA</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/05/Django2-0博客教程-四-功能完善/" rel="next" title="Django2.0博客教程(四)功能完善">
+                <i class="fa fa-chevron-left"></i> Django2.0博客教程(四)功能完善
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/img.jpg"
+                alt="吴刚" />
+            
+              <p class="site-author-name" itemprop="name">吴刚</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/Aitical" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题"><span class="nav-number">1.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PCA的实现"><span class="nav-number">2.</span> <span class="nav-text">PCA的实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#算法步骤"><span class="nav-number">2.1.</span> <span class="nav-text">算法步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数学基础"><span class="nav-number">2.2.</span> <span class="nav-text">数学基础</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据的向量表示"><span class="nav-number">2.2.1.</span> <span class="nav-text">数据的向量表示</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#向量的内积"><span class="nav-number">2.2.2.</span> <span class="nav-text">向量的内积</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#向量的基"><span class="nav-number">2.2.3.</span> <span class="nav-text">向量的基</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#向量基变换"><span class="nav-number">2.2.4.</span> <span class="nav-text">向量基变换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#降维的约束条件"><span class="nav-number">2.2.5.</span> <span class="nav-text">降维的约束条件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#协方差矩阵"><span class="nav-number">2.2.6.</span> <span class="nav-text">协方差矩阵</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#协方差矩阵对角化"><span class="nav-number">2.2.7.</span> <span class="nav-text">协方差矩阵对角化</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#例题"><span class="nav-number">2.3.</span> <span class="nav-text">例题</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">吴刚</span>
+
+  
+</div>
+
+
+
+<span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+<span id="busuanzi_container_site_uv">
+  本站访客数<span id="busuanzi_value_site_uv"></span>人次
+</span>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="custom_mathjax_source">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+  
+
+
+  
+
+  
+
+</body>
+</html>
