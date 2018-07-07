@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-05-11T02:27:34.976Z</updated>
+  <updated>2018-07-07T11:57:55.339Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Centos安装python3与pip3</title>
+    <link href="http://yoursite.com/2018/07/07/Centos%E5%AE%89%E8%A3%85python3%E4%B8%8Epip3/"/>
+    <id>http://yoursite.com/2018/07/07/Centos安装python3与pip3/</id>
+    <published>2018-07-07T11:51:07.000Z</published>
+    <updated>2018-07-07T11:57:55.339Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="安装必要依赖"><a href="#安装必要依赖" class="headerlink" title="安装必要依赖"></a>安装必要依赖</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo yum -y install gcc  </span><br><span class="line">sudo yum -y install zlib zlib-devel</span><br><span class="line">sudo yum -y install libffi-devel </span><br><span class="line">sudo yum -y install openssl-devel ncurses-devel</span><br></pre></td></tr></table></figure><h3 id="下载python3-7"><a href="#下载python3-7" class="headerlink" title="下载python3.7"></a>下载python3.7</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://www.python.org/ftp/python/3.7.0/Python-3.7.0.tgz</span><br></pre></td></tr></table></figure><h3 id="创建安装目录"><a href="#创建安装目录" class="headerlink" title="创建安装目录"></a>创建安装目录</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir /usr/local/python3</span><br></pre></td></tr></table></figure><h3 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf Python-3.7.0.tgz</span><br><span class="line"></span><br><span class="line">cd Python-3.7.0/</span><br></pre></td></tr></table></figure><h3 id="编译安装"><a href="#编译安装" class="headerlink" title="编译安装"></a>编译安装</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">./configure --prefix=/usr/local/python3 --enable-optimizations</span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure><p>加了<code>--enable-optimizations</code>之后时间比较久,但是用于提升python的性能</p><h3 id="创建python3链接"><a href="#创建python3链接" class="headerlink" title="创建python3链接"></a>创建python3链接</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s /usr/local/python3/bin/python3.7 /usr/bin/python3</span><br></pre></td></tr></table></figure><h3 id="创建pip3链接"><a href="#创建pip3链接" class="headerlink" title="创建pip3链接"></a>创建pip3链接</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s /usr/local/python3/bin/pip3 /usr/bin/pip3</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;安装必要依赖&quot;&gt;&lt;a href=&quot;#安装必要依赖&quot; class=&quot;headerlink&quot; title=&quot;安装必要依赖&quot;&gt;&lt;/a&gt;安装必要依赖&lt;/h3&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gut
+      
+    
+    </summary>
+    
+      <category term="杂记" scheme="http://yoursite.com/categories/%E6%9D%82%E8%AE%B0/"/>
+    
+    
+      <category term="python" scheme="http://yoursite.com/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>PCA(主成成分分析)学习笔记</title>
