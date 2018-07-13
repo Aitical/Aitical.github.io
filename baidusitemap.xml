@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://yoursite.com/2018/07/13/%E6%84%9F%E7%9F%A5%E6%9C%BA-PLA/</loc>
+    <lastmod>2018-07-13T15:50:30.182Z</lastmod>
+    <data>
+        <display>
+        <title>感知机(PLA)</title>
+        <pubTime>2018-07-13T15:48:50.000Z</pubTime>
+        
+        <tag>机器学习</tag>
+         
+         
+           
+             
+              <breadCrumb title="机器学习" url="http://yoursite.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2018/07/08/Centos%E9%85%8D%E7%BD%AEvim/</loc>
     <lastmod>2018-07-08T15:21:28.797Z</lastmod>
     <data>
@@ -173,9 +193,9 @@
         
         <tag>编译原理</tag>
          
-        <tag>NFA</tag>
-         
         <tag>DFA</tag>
+         
+        <tag>NFA</tag>
          
          
            
@@ -219,9 +239,9 @@
         
         <tag>编译原理</tag>
          
-        <tag>NFA</tag>
-         
         <tag>DFA</tag>
+         
+        <tag>NFA</tag>
          
          
            
