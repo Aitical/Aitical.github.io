@@ -4,6 +4,24 @@
 
     
   <url>
+    <loc>http://yoursite.com/2018/07/08/Centos%E9%85%8D%E7%BD%AEvim/</loc>
+    <lastmod>2018-07-14T06:21:51.858Z</lastmod>
+    <data>
+        <display>
+        <title>Centos配置vim</title>
+        <pubTime>2018-07-08T15:13:08.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="杂记" url="http://yoursite.com/categories/%E6%9D%82%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2018/07/13/%E6%84%9F%E7%9F%A5%E6%9C%BA-PLA/</loc>
     <lastmod>2018-07-14T06:17:22.509Z</lastmod>
     <data>
@@ -17,24 +35,6 @@
            
              
               <breadCrumb title="机器学习" url="http://yoursite.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2018/07/08/Centos%E9%85%8D%E7%BD%AEvim/</loc>
-    <lastmod>2018-07-08T15:21:28.797Z</lastmod>
-    <data>
-        <display>
-        <title>Centos配置vim</title>
-        <pubTime>2018-07-08T15:13:08.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="杂记" url="http://yoursite.com/categories/%E6%9D%82%E8%AE%B0/"/>
           
         </display>
     </data>

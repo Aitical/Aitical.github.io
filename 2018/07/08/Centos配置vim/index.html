@@ -88,7 +88,7 @@
 <meta property="og:site_name" content="Aitical的个人小站">
 <meta property="og:description" content="下载安装脚本用了很长一段时间vimplus,觉得蛮好用的而且插件很全功能也很丰富 123git clone https://github.com/chxuan/vimplus.git ~/.vimpluscd ~/.vimplus./install.sh 安装好之后可以看到YCM的版本兼容提示,centos自带的vim7.4版本过低,要升级8.0 以下操作以root身份执行 添加源1curl -L">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-08T15:21:28.797Z">
+<meta property="og:updated_time" content="2018-07-14T06:21:51.858Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Centos配置vim">
 <meta name="twitter:description" content="下载安装脚本用了很长一段时间vimplus,觉得蛮好用的而且插件很全功能也很丰富 123git clone https://github.com/chxuan/vimplus.git ~/.vimpluscd ~/.vimplus./install.sh 安装好之后可以看到YCM的版本兼容提示,centos自带的vim7.4版本过低,要升级8.0 以下操作以root身份执行 添加源1curl -L">
@@ -365,10 +365,8 @@ var _hmt = _hmt || [];
 <p>安装好之后可以看到YCM的版本兼容提示,centos自带的vim7.4版本过低,要升级8.0</p>
 <p>以下操作以<strong>root</strong>身份执行</p>
 <h3 id="添加源"><a href="#添加源" class="headerlink" title="添加源"></a>添加源</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -L https://copr.fedorainfracloud.org/coprs/mcepl/vim8/repo/epel-7/mcepl-vim8-epel-7.repo -o /etc/yum.repos.d/mcepl-vim8-epel-7.repo</span><br></pre></td></tr></table></figure>
-<h3 id="清理旧版本"><a href="#清理旧版本" class="headerlink" title="清理旧版本"></a>清理旧版本</h3><p>yum remove vim</p>
-<p>yum remove vim-minimal</p>
-<h3 id="安装新版本"><a href="#安装新版本" class="headerlink" title="安装新版本"></a>安装新版本</h3><p>yum install vim </p>
-<p>yum install sudo</p>
+<h3 id="清理旧版本"><a href="#清理旧版本" class="headerlink" title="清理旧版本"></a>清理旧版本</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum remove vim</span><br><span class="line">yum remove vim-minimal</span><br></pre></td></tr></table></figure>
+<h3 id="安装新版本"><a href="#安装新版本" class="headerlink" title="安装新版本"></a>安装新版本</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum install vim </span><br><span class="line">yum install sudo</span><br></pre></td></tr></table></figure>
 <p>直接升级或者安装vim8.0会产生一些冲突,所以上面先把原来的vim相关的都清掉</p>
 <h3 id="一些小问题"><a href="#一些小问题" class="headerlink" title="一些小问题"></a>一些小问题</h3><p>安装好后执行更新</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum update</span><br></pre></td></tr></table></figure>
