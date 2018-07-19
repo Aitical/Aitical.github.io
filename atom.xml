@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-07-14T06:29:01.352Z</updated>
+  <updated>2018-07-19T15:41:09.482Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>AdaBoost算法原理</title>
+    <link href="http://yoursite.com/2018/07/18/AdaBoost%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86/"/>
+    <id>http://yoursite.com/2018/07/18/AdaBoost算法原理/</id>
+    <published>2018-07-18T04:41:48.000Z</published>
+    <updated>2018-07-19T15:41:09.482Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="AdaBoost简述"><a href="#AdaBoost简述" class="headerlink" title="AdaBoost简述"></a>AdaBoost简述</h3><blockquote><p>AdaBoost，是英文”Adaptive Boosting”（自适应增强）的缩写，由Yoav Freund和Robert Schapire在1995年提出。它的自适应在于：前一个基本分类器分错的样本会得到加强，加权后的全体样本再次被用来训练下一个基本分类器。同时，在每一轮中加入一个新的弱分类器，直到达到某个预定的足够小的错误率或达到预先指定的最大迭代次数。</p></blockquote><p>AdaBoost在每一轮训练过程中提高被前一轮弱分类器错误分类的弱分类器权值,降低正确分类的样本权值,使得没有被正确分类的数据由于权值大而被后一轮的弱分类器更加关注.最后采用加权多数表决法,加大误差率晓得弱分类器的权值,使其在表决中有较大作用,减少分类误差率大的弱分类器权值,使其在表决中有较小作用.</p><h3 id="AdaBoost算法"><a href="#AdaBoost算法" class="headerlink" title="AdaBoost算法"></a>AdaBoost算法</h3><p>训练数据集<br>$$<br>T=\lbrace (x{1}, y{1}), (x{2}, y{2}),\dots, (x{N}, y{N}) \rbrace<br>$$<br>其中样本点由实例与标记组成,实例$x_{i}\in\chi\subseteq R^{n}, y_{i}\in Y={-1, +1}$</p><p><strong>算法</strong>:</p><p>初始化训练数据的权值分布:<br>$$<br>D_{1} = (\omega_{11}, \dots,\omega_{1,i},\dots,\omega_{1N}), \space \omega_{1i}=\frac{1}{N}, \space i=1,2,\dots, N<br>$$<br>对于第$m = 1,2,\dots,M$次,用权值分布为$D_{m}$的数据训练弱分类器$G_{m}$, 计算$G_{m}$在训练集上的误分类率:<br>$$<br>e_{m}= \sum_{i=1}^{N}P(G_{m}(x_{i})\ne y_{i})=\sum_{i=1}^{N}\omega_{mi}I(G_{m}(x_{i})\ne y_{i})<br>$$<br>计算$G_{m}$的系数<br>$$<br>\alpha_{m} = \frac{1}{2}log\frac{1-e_{m}}{e_{m}}<br>$$<br>更新训练集的权值分布<br>$$<br>D_{m+1} = (\omega_{m+11}, \dots,\omega_{m+1,i},\dots,\omega_{m+1N})<br>$$</p><p>$$<br>\omega_{m+1, i}=\frac{\omega_{mi}}{Z_{m}}e^{-\alpha_{m}y_{i}G_{m}(x_{i})}<br>$$</p><p>其中$Z_{m}$是规范化因子<br>$$<br>Z_{m}=\sum_{i=1}^{N}\omega_{mi}e^{-\alpha_{m}y_{i}G_{m}(x_{i})}<br>$$<br>构建基本分类器线性组合<br>$$<br>f(x) = \sum_{m=1}^{M}\alpha_{m}G_{m}(x)<br>$$<br>得到最终分类器<br>$$<br>G(x)=sign(f(x))=sign(\sum_{m=1}^{M}\alpha_{m}G_{m}(x))<br>$$</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;AdaBoost简述&quot;&gt;&lt;a href=&quot;#AdaBoost简述&quot; class=&quot;headerlink&quot; title=&quot;AdaBoost简述&quot;&gt;&lt;/a&gt;AdaBoost简述&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;AdaBoost，是英文”Adaptive Boo
+      
+    
+    </summary>
+    
+      <category term="机器学习" scheme="http://yoursite.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="adaboost" scheme="http://yoursite.com/tags/adaboost/"/>
+    
+  </entry>
   
   <entry>
     <title>Ubuntu系统初始化配置</title>
@@ -323,9 +349,9 @@
     
       <category term="编译原理" scheme="http://yoursite.com/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/"/>
     
-      <category term="NFA" scheme="http://yoursite.com/tags/NFA/"/>
-    
       <category term="DFA" scheme="http://yoursite.com/tags/DFA/"/>
+    
+      <category term="NFA" scheme="http://yoursite.com/tags/NFA/"/>
     
   </entry>
   
@@ -358,9 +384,9 @@
     
       <category term="编译原理" scheme="http://yoursite.com/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/"/>
     
-      <category term="NFA" scheme="http://yoursite.com/tags/NFA/"/>
-    
       <category term="DFA" scheme="http://yoursite.com/tags/DFA/"/>
+    
+      <category term="NFA" scheme="http://yoursite.com/tags/NFA/"/>
     
   </entry>
   
