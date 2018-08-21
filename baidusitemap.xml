@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>http://yoursite.com/2018/08/21/Django%E5%BC%80%E5%8F%91Restful-API%E8%AE%B0%E5%BD%95-%E4%B8%80/</loc>
+    <lastmod>2018-08-21T13:46:33.743Z</lastmod>
+    <data>
+        <display>
+        <title>Django开发Restful API记录(一)</title>
+        <pubTime>2018-08-21T13:42:36.000Z</pubTime>
+        
+        <tag>django</tag>
+         
+        <tag>api开发</tag>
+         
+         
+           
+             
+              <breadCrumb title="Django" url="http://yoursite.com/categories/Django/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2018/07/18/AdaBoost%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86/</loc>
     <lastmod>2018-07-19T15:41:09.482Z</lastmod>
     <data>
@@ -231,9 +253,9 @@
         
         <tag>编译原理</tag>
          
-        <tag>DFA</tag>
-         
         <tag>NFA</tag>
+         
+        <tag>DFA</tag>
          
          
            
@@ -277,9 +299,9 @@
         
         <tag>编译原理</tag>
          
-        <tag>DFA</tag>
-         
         <tag>NFA</tag>
+         
+        <tag>DFA</tag>
          
          
            
