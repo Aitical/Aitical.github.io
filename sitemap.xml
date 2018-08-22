@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
       <url>
+        <loc>http://aitical.github.io/2018/08/22/Django%E5%BC%80%E5%8F%91Restful-API%E8%AE%B0%E5%BD%95-%E4%BA%8C/</loc>
+        
+        <lastmod>2018-08-22T04:46:13.821Z</lastmod>
+        
+        </url>
+      
+      <url>
         <loc>http://aitical.github.io/2018/08/21/Django%E5%BC%80%E5%8F%91Restful-API%E8%AE%B0%E5%BD%95-%E4%B8%80/</loc>
         
         <lastmod>2018-08-21T13:46:33.743Z</lastmod>

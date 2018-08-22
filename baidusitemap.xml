@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>http://yoursite.com/2018/08/22/Django%E5%BC%80%E5%8F%91Restful-API%E8%AE%B0%E5%BD%95-%E4%BA%8C/</loc>
+    <lastmod>2018-08-22T04:46:13.821Z</lastmod>
+    <data>
+        <display>
+        <title>Django开发Restful API记录(二)</title>
+        <pubTime>2018-08-22T04:43:23.000Z</pubTime>
+        
+        <tag>django</tag>
+         
+        <tag>api开发</tag>
+         
+         
+           
+             
+              <breadCrumb title="Django" url="http://yoursite.com/categories/Django/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2018/08/21/Django%E5%BC%80%E5%8F%91Restful-API%E8%AE%B0%E5%BD%95-%E4%B8%80/</loc>
     <lastmod>2018-08-21T13:46:33.743Z</lastmod>
     <data>
