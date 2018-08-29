@@ -4,6 +4,46 @@
 
     
   <url>
+    <loc>http://yoursite.com/2018/08/27/python3%E7%BC%BA%E5%A4%B1-bz2%E6%A8%A1%E5%9D%97%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</loc>
+    <lastmod>2018-08-27T03:20:35.853Z</lastmod>
+    <data>
+        <display>
+        <title>python3缺失_bz2模块解决方案</title>
+        <pubTime>2018-08-27T02:17:33.000Z</pubTime>
+        
+        <tag>centos7</tag>
+         
+         
+           
+             
+              <breadCrumb title="杂记" url="http://yoursite.com/categories/%E6%9D%82%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/07/08/Centos%E9%85%8D%E7%BD%AEvim/</loc>
+    <lastmod>2018-08-27T03:03:10.983Z</lastmod>
+    <data>
+        <display>
+        <title>Centos配置vim</title>
+        <pubTime>2018-07-08T15:13:08.000Z</pubTime>
+        
+        <tag>centos7</tag>
+         
+         
+           
+             
+              <breadCrumb title="杂记" url="http://yoursite.com/categories/%E6%9D%82%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2018/08/22/Django%E5%BC%80%E5%8F%91Restful-API%E8%AE%B0%E5%BD%95-%E4%BA%8C/</loc>
     <lastmod>2018-08-22T04:46:13.821Z</lastmod>
     <data>
@@ -74,24 +114,6 @@
         <display>
         <title>Ubuntu系统初始化配置</title>
         <pubTime>2018-07-14T06:28:29.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="杂记" url="http://yoursite.com/categories/%E6%9D%82%E8%AE%B0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2018/07/08/Centos%E9%85%8D%E7%BD%AEvim/</loc>
-    <lastmod>2018-07-14T06:21:51.858Z</lastmod>
-    <data>
-        <display>
-        <title>Centos配置vim</title>
-        <pubTime>2018-07-08T15:13:08.000Z</pubTime>
         
          
            
