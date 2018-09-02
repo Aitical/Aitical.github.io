@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="centos," />
 
 
 
@@ -81,14 +81,25 @@
 
 
 
+<meta name="description" content="有一块1070ti的卡,之前在Ubuntu上跑了一段时间训练,被刷回Windows打游戏了,开学了要给搞回来了,由于这段时间一直使用centos,所以这次直接用centos,由于我们不直接使用这台机子,所以也没装桌面环境,直接当做sever使用了 centos7系统注意安装系统时请选中开发者工具包一起安装,这样会安装好后面需要的很多依赖,如果忘记选中的话,开机后执行 1sudo yum -y gr">
+<meta name="keywords" content="centos">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Django2.0博客教程(四)功能完善">
-<meta property="og:url" content="http://yoursite.com/2018/05/05/Django2-0博客教程-四-功能完善/index.html">
+<meta property="og:title" content="centos7搭建深度学习环境">
+<meta property="og:url" content="http://yoursite.com/2018/09/02/centos7搭建深度学习环境/index.html">
 <meta property="og:site_name" content="Aitical的个人小站">
+<meta property="og:description" content="有一块1070ti的卡,之前在Ubuntu上跑了一段时间训练,被刷回Windows打游戏了,开学了要给搞回来了,由于这段时间一直使用centos,所以这次直接用centos,由于我们不直接使用这台机子,所以也没装桌面环境,直接当做sever使用了 centos7系统注意安装系统时请选中开发者工具包一起安装,这样会安装好后面需要的很多依赖,如果忘记选中的话,开机后执行 1sudo yum -y gr">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-05T15:19:57.602Z">
+<meta property="og:image" content="http://yoursite.com/2018/09/02/centos7搭建深度学习环境/选择驱动.png">
+<meta property="og:image" content="http://yoursite.com/2018/09/02/centos7搭建深度学习环境/384.png">
+<meta property="og:image" content="http://yoursite.com/2018/09/02/centos7搭建深度学习环境/smi.png">
+<meta property="og:image" content="http://yoursite.com/2018/09/02/centos7搭建深度学习环境/cuda9.2.png">
+<meta property="og:image" content="http://yoursite.com/2018/09/02/centos7搭建深度学习环境/cuda9.0.png">
+<meta property="og:image" content="http://yoursite.com/2018/09/02/centos7搭建深度学习环境/cuda_runfile.png">
+<meta property="og:updated_time" content="2018-09-02T07:39:08.906Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Django2.0博客教程(四)功能完善">
+<meta name="twitter:title" content="centos7搭建深度学习环境">
+<meta name="twitter:description" content="有一块1070ti的卡,之前在Ubuntu上跑了一段时间训练,被刷回Windows打游戏了,开学了要给搞回来了,由于这段时间一直使用centos,所以这次直接用centos,由于我们不直接使用这台机子,所以也没装桌面环境,直接当做sever使用了 centos7系统注意安装系统时请选中开发者工具包一起安装,这样会安装好后面需要的很多依赖,如果忘记选中的话,开机后执行 1sudo yum -y gr">
+<meta name="twitter:image" content="http://yoursite.com/2018/09/02/centos7搭建深度学习环境/选择驱动.png">
 
 
 
@@ -131,13 +142,13 @@ var _hmt = _hmt || [];
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/05/Django2-0博客教程-四-功能完善/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/09/02/centos7搭建深度学习环境/"/>
 
 
 
 
 
-  <title>Django2.0博客教程(四)功能完善 | Aitical的个人小站</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>centos7搭建深度学习环境 | Aitical的个人小站</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -268,7 +279,7 @@ var _hmt = _hmt || [];
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/05/Django2-0博客教程-四-功能完善/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/02/centos7搭建深度学习环境/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="吴刚">
@@ -285,7 +296,7 @@ var _hmt = _hmt || [];
 
         
         
-          <h1 class="post-title" itemprop="name headline">Django2.0博客教程(四)功能完善</h1>
+          <h1 class="post-title" itemprop="name headline">centos7搭建深度学习环境</h1>
         
 
         <div class="post-meta">
@@ -297,8 +308,8 @@ var _hmt = _hmt || [];
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-05T23:19:57+08:00">
-                2018-05-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-02T14:53:06+08:00">
+                2018-09-02
               </time>
             
 
@@ -307,6 +318,28 @@ var _hmt = _hmt || [];
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/杂记/" itemprop="url" rel="index">
+                    <span itemprop="name">杂记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -335,7 +368,47 @@ var _hmt = _hmt || [];
       
 
       
-        
+        <p>有一块1070ti的卡,之前在Ubuntu上跑了一段时间训练,被刷回Windows打游戏了,开学了要给搞回来了,由于这段时间一直使用centos,所以这次直接用centos,由于我们不直接使用这台机子,所以也没装桌面环境,直接当做sever使用了</p>
+<h3 id="centos7系统"><a href="#centos7系统" class="headerlink" title="centos7系统"></a>centos7系统</h3><p>注意安装系统时请选中开发者工具包一起安装,这样会安装好后面需要的很多依赖,如果忘记选中的话,开机后执行</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum -y groupinstall development</span><br></pre></td></tr></table></figure>
+<p>上面安装之后要update</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum update</span><br></pre></td></tr></table></figure>
+<p>重点在于内核的更新,因为后面驱动用到<code>kernel-devel</code>的依赖,手动安装的开发者包里面的devel现在是比系统的内核小版本更新的,所以不update的话会在驱动安装时返回kernel版本号错误</p>
+<p>可以用下面的语句查看当前内核版本号</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uname -r</span><br></pre></td></tr></table></figure>
+<h3 id="下载显卡驱动"><a href="#下载显卡驱动" class="headerlink" title="下载显卡驱动"></a>下载显卡驱动</h3><p>推荐去NVIDIA官网下载驱动程序,选择显卡号与系统后会有驱动列表,然后下载<strong>请下载稳定版驱动</strong>第一个Beta版不要用,我第一次就直接装了396,然后,然后后面就没有了.</p>
+<p><img src="/2018/09/02/centos7搭建深度学习环境/选择驱动.png" alt="驱动选择"></p>
+<p><strong>注意</strong>:驱动的选择大致是这样</p>
+<ul>
+<li>Pytorch支持最新的CUDA9.2,所以你可以用396,也就是最新的驱动,这些都没问题</li>
+<li>如果<strong>你用Tensorflow的话</strong>,正式发型的版本(现在是1.10)只支持CUDA9.0, 9.2的话会报错,提示缺少一些模块,其实是版本号变了,我没有尝试修改文件的版本号来让他适配,官方说可以自行编译,不过我第二次还是老老实实装了CUDA9.0</li>
+<li>如果用CUDA9.0的话就是驱动384即可,所以下载驱动时可以下几个月前的384,我这里就下了384</li>
+</ul>
+<p>另外,如果用CUDA的run安装包的话,会自动安装显卡驱动,不过我试了几次,都没装成功,所以这里还是推荐大家自己下载驱动安装</p>
+<p><img src="/2018/09/02/centos7搭建深度学习环境/384.png" alt="384"></p>
+<p>下载384的驱动后</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo sh NVIDIA_***.run</span><br></pre></td></tr></table></figure>
+<p>指定驱动安装即可,这时候会提示一些问题,这一次是说原来的nouveau驱动也就是独显的自带驱动影响安装,我们让他<strong>自动创建文件禁止并停用</strong>即可然后提示Failed就结束了这次的安装</p>
+<p>接着<strong>重启计算机</strong>,注意这次重启<strong>要默认用集显/核显开机</strong>,因为独显驱动禁止了,N卡现在没法用,必须用集显/核显开机才能继续安装,如果还是走N卡的话,到BIOS里面buid_in_device选择开机的显示卡</p>
+<p>开机之后到驱动run文件那,执行即可完成安装,然后在命令行可以检查状态</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvidia-smi</span><br></pre></td></tr></table></figure>
+<p><img src="/2018/09/02/centos7搭建深度学习环境/smi.png" alt="nvidia-smi"></p>
+<p>返回当前N卡的状态和型号,也就说明驱动安装成功</p>
+<h3 id="安装CUDA"><a href="#安装CUDA" class="headerlink" title="安装CUDA"></a>安装CUDA</h3><p>依然是去NVIDIA官网下载CUDA啊,这里还是要注意CUDA的版本问题,在上面驱动的选择上已经说了,Tensorflow正式版只支持9.0,但官网上默认是9.2的下载,不要下载错了</p>
+<p><img src="/2018/09/02/centos7搭建深度学习环境/cuda9.2.png" alt="cuda9.2"></p>
+<p>进入右侧legacy download</p>
+<p><img src="/2018/09/02/centos7搭建深度学习环境/cuda9.0.png" alt="cuda9.0"></p>
+<p>下载9.0版本的,选择对应的环境,下载runfile</p>
+<p><img src="/2018/09/02/centos7搭建深度学习环境/cuda_runfile.png" alt="下载对应版本"></p>
+<p>然后按照官网的提示,执行安装就行了,在安装cuda时,第一个显卡驱动选n,因为我们已经装过了,反复安装的话会有问题吧,我第一次安装时就又安装一遍,结果…没然后了</p>
+<p>安装完成后添加环境变量,在/etc/profile最后添加下面两句就行</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH</span><br><span class="line"></span><br><span class="line">export PATH=/usr/local/cuda/bin:$PATH</span><br></pre></td></tr></table></figure>
+<p>然后加载环境变量</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source /etc/profile</span><br></pre></td></tr></table></figure>
+<h3 id="安装CUDNN"><a href="#安装CUDNN" class="headerlink" title="安装CUDNN"></a>安装CUDNN</h3><p>还是去官网下载,这里要登录一下,我看到可以qq登录了,不过我这面竟然要翻墙???,反正进去了,下载对应cuda9.0的cudnn就行,然后下载,按照官网提示的解压并放到对应位置即可</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf cudnn-*.tgz</span><br><span class="line">sudo cp cuda/include/cudnn.h /usr/local/cuda/include</span><br><span class="line">sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64</span><br><span class="line">sudo chmod a+r /usr/local/cuda/include/cudnn.h</span><br><span class="line">sudo chmod a+r /usr/local/cuda/lib64/libcudnn*</span><br></pre></td></tr></table></figure>
+<p>到这就设置好环境了,之前也都编译好python3了,再装一下tensorflow-gpu和keras就可以用了</p>
+
       
     </div>
     
@@ -379,6 +452,12 @@ var _hmt = _hmt || [];
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/centos/" rel="tag"># centos</a>
+          
+        </div>
+      
 
       
       
@@ -388,8 +467,8 @@ var _hmt = _hmt || [];
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/05/Django2-0博客教程-三-更多页面的实现/" rel="next" title="Django2-0博客教程(三)更多页面的实现">
-                <i class="fa fa-chevron-left"></i> Django2-0博客教程(三)更多页面的实现
+              <a href="/2018/08/27/python3缺失-bz2模块解决方案/" rel="next" title="python3缺失_bz2模块解决方案">
+                <i class="fa fa-chevron-left"></i> python3缺失_bz2模块解决方案
               </a>
             
           </div>
@@ -397,10 +476,6 @@ var _hmt = _hmt || [];
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/10/PCA-主成成分分析-学习笔记/" rel="prev" title="PCA(主成成分分析)学习笔记">
-                PCA(主成成分分析)学习笔记 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -452,8 +527,17 @@ var _hmt = _hmt || [];
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -534,6 +618,22 @@ var _hmt = _hmt || [];
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#centos7系统"><span class="nav-number">1.</span> <span class="nav-text">centos7系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下载显卡驱动"><span class="nav-number">2.</span> <span class="nav-text">下载显卡驱动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装CUDA"><span class="nav-number">3.</span> <span class="nav-text">安装CUDA</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装CUDNN"><span class="nav-number">4.</span> <span class="nav-text">安装CUDNN</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
