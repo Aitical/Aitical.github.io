@@ -4,8 +4,28 @@
 
     
   <url>
+    <loc>http://yoursite.com/2018/09/02/jupyter%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/</loc>
+    <lastmod>2018-09-03T04:49:56.749Z</lastmod>
+    <data>
+        <display>
+        <title>jupyter服务器搭建</title>
+        <pubTime>2018-09-02T07:40:04.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+         
+           
+             
+              <breadCrumb title="杂记" url="http://yoursite.com/categories/%E6%9D%82%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2018/09/02/centos7%E6%90%AD%E5%BB%BA%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%8E%AF%E5%A2%83/</loc>
-    <lastmod>2018-09-02T07:39:08.906Z</lastmod>
+    <lastmod>2018-09-02T07:43:23.771Z</lastmod>
     <data>
         <display>
         <title>centos7搭建深度学习环境</title>
