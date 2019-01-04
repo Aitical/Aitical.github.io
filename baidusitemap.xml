@@ -3,102 +3,24 @@
 
 
     
-  <url>
-    <loc>http://yoursite.com/2018/09/02/jupyter%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/</loc>
-    <lastmod>2018-09-03T04:49:56.749Z</lastmod>
-    <data>
-        <display>
-        <title>jupyter服务器搭建</title>
-        <pubTime>2018-09-02T07:40:04.000Z</pubTime>
-        
-        <tag>python</tag>
-         
-         
-           
-             
-              <breadCrumb title="杂记" url="http://yoursite.com/categories/%E6%9D%82%E8%AE%B0/"/>
-          
-        </display>
-    </data>
-    </url>
-
+    
     
   <url>
-    <loc>http://yoursite.com/2018/09/02/centos7%E6%90%AD%E5%BB%BA%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%8E%AF%E5%A2%83/</loc>
-    <lastmod>2018-09-02T07:43:23.771Z</lastmod>
+    <loc>http://yoursite.com/2018/04/21/%E4%BB%8E%E6%AD%A3%E5%88%99%E7%9B%B4%E6%8E%A5%E5%88%B0DFA/</loc>
+    <lastmod>2019-01-04T06:28:32.419Z</lastmod>
     <data>
         <display>
-        <title>centos7搭建深度学习环境</title>
-        <pubTime>2018-09-02T06:53:06.000Z</pubTime>
+        <title>从正则直接到DFA</title>
+        <pubTime>2018-04-21T13:02:06.000Z</pubTime>
         
-        <tag>centos</tag>
+        <tag>编译原理</tag>
+         
+        <tag>DFA</tag>
          
          
            
              
-              <breadCrumb title="杂记" url="http://yoursite.com/categories/%E6%9D%82%E8%AE%B0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2018/08/27/python3%E7%BC%BA%E5%A4%B1-bz2%E6%A8%A1%E5%9D%97%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</loc>
-    <lastmod>2018-08-27T03:20:35.853Z</lastmod>
-    <data>
-        <display>
-        <title>python3缺失_bz2模块解决方案</title>
-        <pubTime>2018-08-27T02:17:33.000Z</pubTime>
-        
-        <tag>centos7</tag>
-         
-         
-           
-             
-              <breadCrumb title="杂记" url="http://yoursite.com/categories/%E6%9D%82%E8%AE%B0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2018/07/08/Centos%E9%85%8D%E7%BD%AEvim/</loc>
-    <lastmod>2018-08-27T03:03:10.983Z</lastmod>
-    <data>
-        <display>
-        <title>Centos配置vim</title>
-        <pubTime>2018-07-08T15:13:08.000Z</pubTime>
-        
-        <tag>centos7</tag>
-         
-         
-           
-             
-              <breadCrumb title="杂记" url="http://yoursite.com/categories/%E6%9D%82%E8%AE%B0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2018/08/22/Django%E5%BC%80%E5%8F%91Restful-API%E8%AE%B0%E5%BD%95-%E4%BA%8C/</loc>
-    <lastmod>2018-08-22T04:46:13.821Z</lastmod>
-    <data>
-        <display>
-        <title>Django开发Restful API记录(二)</title>
-        <pubTime>2018-08-22T04:43:23.000Z</pubTime>
-        
-        <tag>django</tag>
-         
-        <tag>api开发</tag>
-         
-         
-           
-             
-              <breadCrumb title="Django" url="http://yoursite.com/categories/Django/"/>
+              <breadCrumb title="编译原理" url="http://yoursite.com/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/"/>
           
         </display>
     </data>
@@ -107,7 +29,7 @@
     
   <url>
     <loc>http://yoursite.com/2018/08/21/Django%E5%BC%80%E5%8F%91Restful-API%E8%AE%B0%E5%BD%95-%E4%B8%80/</loc>
-    <lastmod>2018-08-21T13:46:33.743Z</lastmod>
+    <lastmod>2019-01-04T06:28:32.415Z</lastmod>
     <data>
         <display>
         <title>Django开发Restful API记录(一)</title>
@@ -128,115 +50,20 @@
 
     
   <url>
-    <loc>http://yoursite.com/2018/07/18/AdaBoost%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86/</loc>
-    <lastmod>2018-07-19T15:41:09.482Z</lastmod>
+    <loc>http://yoursite.com/2018/09/02/centos7%E6%90%AD%E5%BB%BA%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%8E%AF%E5%A2%83/</loc>
+    <lastmod>2019-01-04T06:28:32.403Z</lastmod>
     <data>
         <display>
-        <title>AdaBoost算法原理</title>
-        <pubTime>2018-07-18T04:41:48.000Z</pubTime>
+        <title>centos7搭建深度学习环境</title>
+        <pubTime>2018-09-02T06:53:06.000Z</pubTime>
         
-        <tag>adaboost</tag>
-         
-         
-           
-             
-              <breadCrumb title="机器学习" url="http://yoursite.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2018/07/14/Ubuntu%E7%B3%BB%E7%BB%9F%E5%88%9D%E5%A7%8B%E5%8C%96%E9%85%8D%E7%BD%AE/</loc>
-    <lastmod>2018-07-14T06:29:01.352Z</lastmod>
-    <data>
-        <display>
-        <title>Ubuntu系统初始化配置</title>
-        <pubTime>2018-07-14T06:28:29.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="杂记" url="http://yoursite.com/categories/%E6%9D%82%E8%AE%B0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2018/07/13/%E6%84%9F%E7%9F%A5%E6%9C%BA-PLA/</loc>
-    <lastmod>2018-07-14T06:17:22.509Z</lastmod>
-    <data>
-        <display>
-        <title>感知机(PLA)</title>
-        <pubTime>2018-07-13T15:48:50.000Z</pubTime>
-        
-        <tag>机器学习</tag>
-         
-         
-           
-             
-              <breadCrumb title="机器学习" url="http://yoursite.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2018/07/07/Centos%E5%AE%89%E8%A3%85python3%E4%B8%8Epip3/</loc>
-    <lastmod>2018-07-07T11:57:55.339Z</lastmod>
-    <data>
-        <display>
-        <title>Centos安装python3与pip3</title>
-        <pubTime>2018-07-07T11:51:07.000Z</pubTime>
-        
-        <tag>python</tag>
+        <tag>centos</tag>
          
          
            
              
               <breadCrumb title="杂记" url="http://yoursite.com/categories/%E6%9D%82%E8%AE%B0/"/>
           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2018/05/10/PCA-%E4%B8%BB%E6%88%90%E6%88%90%E5%88%86%E5%88%86%E6%9E%90-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2018-05-11T02:27:34.976Z</lastmod>
-    <data>
-        <display>
-        <title>PCA(主成成分分析)学习笔记</title>
-        <pubTime>2018-05-10T08:23:46.000Z</pubTime>
-        
-        <tag>机器学习</tag>
-         
-        <tag>PCA</tag>
-         
-         
-           
-             
-              <breadCrumb title="机器学习" url="http://yoursite.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2018/05/05/Django2-0%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B-%E5%9B%9B-%E5%8A%9F%E8%83%BD%E5%AE%8C%E5%96%84/</loc>
-    <lastmod>2018-05-05T15:19:57.602Z</lastmod>
-    <data>
-        <display>
-        <title>Django2.0博客教程(四)功能完善</title>
-        <pubTime>2018-05-05T15:19:57.000Z</pubTime>
-        
-         
-           
         </display>
     </data>
     </url>
@@ -244,7 +71,7 @@
     
   <url>
     <loc>http://yoursite.com/2018/05/01/Django2-0%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B-%E4%B8%80-%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE/</loc>
-    <lastmod>2018-05-05T08:51:55.249Z</lastmod>
+    <lastmod>2019-01-04T06:28:32.383Z</lastmod>
     <data>
         <display>
         <title>Django2.0博客教程(一)_创建项目</title>
@@ -267,130 +94,21 @@
 
     
   <url>
-    <loc>http://yoursite.com/2018/05/05/Django2-0%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B-%E4%B8%89-%E6%9B%B4%E5%A4%9A%E9%A1%B5%E9%9D%A2%E7%9A%84%E5%AE%9E%E7%8E%B0/</loc>
-    <lastmod>2018-05-05T08:39:54.633Z</lastmod>
+    <loc>http://yoursite.com/2018/03/25/%E5%86%B3%E7%AD%96%E6%A0%91/</loc>
+    <lastmod>2019-01-04T06:28:32.275Z</lastmod>
     <data>
         <display>
-        <title>Django2-0博客教程(三)更多页面的实现</title>
-        <pubTime>2018-05-05T06:47:13.000Z</pubTime>
+        <title>决策树</title>
+        <pubTime>2018-03-25T15:32:44.000Z</pubTime>
         
         <tag>python</tag>
          
-        <tag>Django</tag>
-         
-        <tag>博客教程</tag>
+        <tag>机器学习</tag>
          
          
            
              
-              <breadCrumb title="Django博客教程" url="http://yoursite.com/categories/Django%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2018/05/02/Django2-0%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B-%E4%BA%8C-%E5%88%9D%E6%AD%A5%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</loc>
-    <lastmod>2018-05-05T07:37:44.823Z</lastmod>
-    <data>
-        <display>
-        <title>Django2.0博客教程(二)_初步搭建博客</title>
-        <pubTime>2018-05-02T13:10:40.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2018/05/01/pipenv%E4%BD%BF%E7%94%A8%E7%AE%80%E8%AE%B0/</loc>
-    <lastmod>2018-05-01T15:24:09.186Z</lastmod>
-    <data>
-        <display>
-        <title>pipenv使用简记</title>
-        <pubTime>2018-05-01T15:08:45.000Z</pubTime>
-        
-        <tag>python</tag>
-         
-        <tag>pipenv</tag>
-         
-         
-           
-             
-              <breadCrumb title="杂记" url="http://yoursite.com/categories/%E6%9D%82%E8%AE%B0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2018/04/19/%E4%BB%8E%E6%AD%A3%E5%88%99%E5%88%B0NFA%E5%88%B0DFA%E5%88%B0%E6%9C%80%E5%B0%8F%E5%8C%96/</loc>
-    <lastmod>2018-04-26T03:02:04.652Z</lastmod>
-    <data>
-        <display>
-        <title>从正则到NFA到DFA到最小化</title>
-        <pubTime>2018-04-19T12:52:58.000Z</pubTime>
-        
-        <tag>编译原理</tag>
-         
-        <tag>NFA</tag>
-         
-        <tag>DFA</tag>
-         
-         
-           
-             
-              <breadCrumb title="编译原理" url="http://yoursite.com/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2018/04/21/%E4%BB%8E%E6%AD%A3%E5%88%99%E7%9B%B4%E6%8E%A5%E5%88%B0DFA/</loc>
-    <lastmod>2018-04-22T13:44:14.008Z</lastmod>
-    <data>
-        <display>
-        <title>从正则直接到DFA</title>
-        <pubTime>2018-04-21T13:02:06.000Z</pubTime>
-        
-        <tag>编译原理</tag>
-         
-        <tag>DFA</tag>
-         
-         
-           
-             
-              <breadCrumb title="编译原理" url="http://yoursite.com/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2018/04/21/%E4%BB%8E%E6%AD%A3%E5%88%99%E5%88%B0NFA%E5%88%B0DFA-%E9%BE%99%E4%B9%A6/</loc>
-    <lastmod>2018-04-22T12:59:07.097Z</lastmod>
-    <data>
-        <display>
-        <title>从正则到NFA到DFA[龙书]</title>
-        <pubTime>2018-04-21T12:55:36.000Z</pubTime>
-        
-        <tag>编译原理</tag>
-         
-        <tag>NFA</tag>
-         
-        <tag>DFA</tag>
-         
-         
-           
-             
-              <breadCrumb title="编译原理" url="http://yoursite.com/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/"/>
+              <breadCrumb title="统计学习方法" url="http://yoursite.com/categories/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/"/>
           
         </display>
     </data>
@@ -399,7 +117,7 @@
     
   <url>
     <loc>http://yoursite.com/2018/04/16/%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF/</loc>
-    <lastmod>2018-04-16T11:20:00.316Z</lastmod>
+    <lastmod>2019-01-04T06:28:32.267Z</lastmod>
     <data>
         <display>
         <title>朴素贝叶斯</title>
@@ -422,8 +140,112 @@
 
     
   <url>
+    <loc>http://yoursite.com/2018/08/27/python3%E7%BC%BA%E5%A4%B1-bz2%E6%A8%A1%E5%9D%97%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</loc>
+    <lastmod>2019-01-04T06:28:32.263Z</lastmod>
+    <data>
+        <display>
+        <title>python3缺失_bz2模块解决方案</title>
+        <pubTime>2018-08-27T02:17:33.000Z</pubTime>
+        
+        <tag>centos7</tag>
+         
+         
+           
+             
+              <breadCrumb title="杂记" url="http://yoursite.com/categories/%E6%9D%82%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/07/18/AdaBoost%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86/</loc>
+    <lastmod>2019-01-04T06:28:32.251Z</lastmod>
+    <data>
+        <display>
+        <title>AdaBoost算法原理</title>
+        <pubTime>2018-07-18T04:41:48.000Z</pubTime>
+        
+        <tag>adaboost</tag>
+         
+         
+           
+             
+              <breadCrumb title="机器学习" url="http://yoursite.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/08/22/Django%E5%BC%80%E5%8F%91Restful-API%E8%AE%B0%E5%BD%95-%E4%BA%8C/</loc>
+    <lastmod>2019-01-04T06:28:32.207Z</lastmod>
+    <data>
+        <display>
+        <title>Django开发Restful API记录(二)</title>
+        <pubTime>2018-08-22T04:43:23.000Z</pubTime>
+        
+        <tag>django</tag>
+         
+        <tag>api开发</tag>
+         
+         
+           
+             
+              <breadCrumb title="Django" url="http://yoursite.com/categories/Django/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/05/01/pipenv%E4%BD%BF%E7%94%A8%E7%AE%80%E8%AE%B0/</loc>
+    <lastmod>2019-01-04T06:28:32.203Z</lastmod>
+    <data>
+        <display>
+        <title>pipenv使用简记</title>
+        <pubTime>2018-05-01T15:08:45.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+        <tag>pipenv</tag>
+         
+         
+           
+             
+              <breadCrumb title="杂记" url="http://yoursite.com/categories/%E6%9D%82%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/07/13/%E6%84%9F%E7%9F%A5%E6%9C%BA-PLA/</loc>
+    <lastmod>2019-01-04T06:28:32.203Z</lastmod>
+    <data>
+        <display>
+        <title>感知机(PLA)</title>
+        <pubTime>2018-07-13T15:48:50.000Z</pubTime>
+        
+        <tag>机器学习</tag>
+         
+         
+           
+             
+              <breadCrumb title="机器学习" url="http://yoursite.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2018/04/14/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%9F%BA%E7%A1%80/</loc>
-    <lastmod>2018-04-14T07:57:19.899Z</lastmod>
+    <lastmod>2019-01-04T06:28:32.199Z</lastmod>
     <data>
         <display>
         <title>概率论基础</title>
@@ -444,21 +266,17 @@
 
     
   <url>
-    <loc>http://yoursite.com/2018/03/25/%E5%86%B3%E7%AD%96%E6%A0%91/</loc>
-    <lastmod>2018-03-29T13:25:31.228Z</lastmod>
+    <loc>http://yoursite.com/2018/07/14/Ubuntu%E7%B3%BB%E7%BB%9F%E5%88%9D%E5%A7%8B%E5%8C%96%E9%85%8D%E7%BD%AE/</loc>
+    <lastmod>2019-01-04T06:28:32.195Z</lastmod>
     <data>
         <display>
-        <title>决策树</title>
-        <pubTime>2018-03-25T15:32:44.000Z</pubTime>
+        <title>Ubuntu系统初始化配置</title>
+        <pubTime>2018-07-14T06:28:29.000Z</pubTime>
         
-        <tag>python</tag>
-         
-        <tag>机器学习</tag>
-         
          
            
              
-              <breadCrumb title="统计学习方法" url="http://yoursite.com/categories/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/"/>
+              <breadCrumb title="杂记" url="http://yoursite.com/categories/%E6%9D%82%E8%AE%B0/"/>
           
         </display>
     </data>
@@ -467,7 +285,7 @@
     
   <url>
     <loc>http://yoursite.com/2018/03/21/KNN%E4%B8%8EKd-tree%E5%AE%9E%E7%8E%B0/</loc>
-    <lastmod>2018-03-28T12:38:23.811Z</lastmod>
+    <lastmod>2019-01-04T06:28:32.183Z</lastmod>
     <data>
         <display>
         <title>KNN与Kd-tree实现</title>
@@ -487,7 +305,189 @@
     </url>
 
     
+  <url>
+    <loc>http://yoursite.com/2018/05/02/Django2-0%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B-%E4%BA%8C-%E5%88%9D%E6%AD%A5%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</loc>
+    <lastmod>2019-01-04T06:28:32.175Z</lastmod>
+    <data>
+        <display>
+        <title>Django2.0博客教程(二)_初步搭建博客</title>
+        <pubTime>2018-05-02T13:10:40.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
     
+  <url>
+    <loc>http://yoursite.com/2018/04/21/%E4%BB%8E%E6%AD%A3%E5%88%99%E5%88%B0NFA%E5%88%B0DFA-%E9%BE%99%E4%B9%A6/</loc>
+    <lastmod>2019-01-04T06:28:32.171Z</lastmod>
+    <data>
+        <display>
+        <title>从正则到NFA到DFA[龙书]</title>
+        <pubTime>2018-04-21T12:55:36.000Z</pubTime>
+        
+        <tag>编译原理</tag>
+         
+        <tag>NFA</tag>
+         
+        <tag>DFA</tag>
+         
+         
+           
+             
+              <breadCrumb title="编译原理" url="http://yoursite.com/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/05/05/Django2-0%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B-%E4%B8%89-%E6%9B%B4%E5%A4%9A%E9%A1%B5%E9%9D%A2%E7%9A%84%E5%AE%9E%E7%8E%B0/</loc>
+    <lastmod>2019-01-04T06:28:32.155Z</lastmod>
+    <data>
+        <display>
+        <title>Django2-0博客教程(三)更多页面的实现</title>
+        <pubTime>2018-05-05T06:47:13.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+        <tag>Django</tag>
+         
+        <tag>博客教程</tag>
+         
+         
+           
+             
+              <breadCrumb title="Django博客教程" url="http://yoursite.com/categories/Django%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/07/07/Centos%E5%AE%89%E8%A3%85python3%E4%B8%8Epip3/</loc>
+    <lastmod>2019-01-04T06:28:32.151Z</lastmod>
+    <data>
+        <display>
+        <title>Centos安装python3与pip3</title>
+        <pubTime>2018-07-07T11:51:07.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+         
+           
+             
+              <breadCrumb title="杂记" url="http://yoursite.com/categories/%E6%9D%82%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/04/19/%E4%BB%8E%E6%AD%A3%E5%88%99%E5%88%B0NFA%E5%88%B0DFA%E5%88%B0%E6%9C%80%E5%B0%8F%E5%8C%96/</loc>
+    <lastmod>2019-01-04T06:28:32.111Z</lastmod>
+    <data>
+        <display>
+        <title>从正则到NFA到DFA到最小化</title>
+        <pubTime>2018-04-19T12:52:58.000Z</pubTime>
+        
+        <tag>编译原理</tag>
+         
+        <tag>NFA</tag>
+         
+        <tag>DFA</tag>
+         
+         
+           
+             
+              <breadCrumb title="编译原理" url="http://yoursite.com/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/09/02/jupyter%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/</loc>
+    <lastmod>2019-01-04T06:28:32.091Z</lastmod>
+    <data>
+        <display>
+        <title>jupyter服务器搭建</title>
+        <pubTime>2018-09-02T07:40:04.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+         
+           
+             
+              <breadCrumb title="杂记" url="http://yoursite.com/categories/%E6%9D%82%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/05/10/PCA-%E4%B8%BB%E6%88%90%E6%88%90%E5%88%86%E5%88%86%E6%9E%90-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2019-01-04T06:28:32.087Z</lastmod>
+    <data>
+        <display>
+        <title>PCA(主成成分分析)学习笔记</title>
+        <pubTime>2018-05-10T08:23:46.000Z</pubTime>
+        
+        <tag>机器学习</tag>
+         
+        <tag>PCA</tag>
+         
+         
+           
+             
+              <breadCrumb title="机器学习" url="http://yoursite.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/05/05/Django2-0%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B-%E5%9B%9B-%E5%8A%9F%E8%83%BD%E5%AE%8C%E5%96%84/</loc>
+    <lastmod>2019-01-04T06:28:32.083Z</lastmod>
+    <data>
+        <display>
+        <title>Django2.0博客教程(四)功能完善</title>
+        <pubTime>2018-05-05T15:19:57.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/07/08/Centos%E9%85%8D%E7%BD%AEvim/</loc>
+    <lastmod>2019-01-04T06:28:32.079Z</lastmod>
+    <data>
+        <display>
+        <title>Centos配置vim</title>
+        <pubTime>2018-07-08T15:13:08.000Z</pubTime>
+        
+        <tag>centos7</tag>
+         
+         
+           
+             
+              <breadCrumb title="杂记" url="http://yoursite.com/categories/%E6%9D%82%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
     
     
 </urlset>
