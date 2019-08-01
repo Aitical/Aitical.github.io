@@ -6,7 +6,6 @@ branches:
 cache:
   directories:
   - node_modules
-  - themes
 install:
 - npm install
 script:
