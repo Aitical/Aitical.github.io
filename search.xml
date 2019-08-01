@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[ShuffleNetV2]]></title>
+    <url>%2F2019%2F07%2F31%2FShuffleNetV2%2F</url>
+    <content type="text"><![CDATA[原文：ShuffleNet V2: Practical Guidelines for Ecient CNN Architecture Design模型性能指标​ 绝大多数的模型压缩和加速的文章中都使用FLOPs(float-point operations)作为模型的评价指标,用来衡量卷积计算量。但是本文开始就通过一组对比试验指出即使是相同MFOPs的模型，在不同平台上实际的处理速度仍差别很大。]]></content>
+      <categories>
+        <category>PaperReading</category>
+      </categories>
+      <tags>
+        <tag>CNN</tag>
+      </tags>
+  </entry>
+</search>
