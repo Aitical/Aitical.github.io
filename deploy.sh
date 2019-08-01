@@ -13,8 +13,7 @@ cd public
 git checkout master
 
 git add .
-git commit -m "Site updated: `date +"%Y-%m-%d %H:%M:%S"`"
+git commit -m ":pencil: Site updated: `date +"%Y-%m-%d %H:%M:%S"`"
 
-# 我也不知道 token 怎么用。。抄大佬的代码
-git push "https://${CI}@github.com/Aitical/Aitical.github.io.git" master:master --quiet
-
+#git push "https://${CI}@github.com/Aitical/Aitical.github.io.git" master:master --quiet
+git push origin master
