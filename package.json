@@ -7,6 +7,7 @@
   },
   "dependencies": {
     "hexo": "^3.9.0",
+    "hexo-all-minifier": "^0.5.3",
     "hexo-asset-image": "git+https://github.com/CodeFalling/hexo-asset-image.git",
     "hexo-deployer-git": "^1.0.0",
     "hexo-generator-archive": "^0.1.5",
@@ -24,6 +25,7 @@
     "hexo-renderer-mathjax": "^0.6.0",
     "hexo-renderer-stylus": "^0.3.3",
     "hexo-server": "^0.3.3",
+    "hexo-symbols-count-time": "git+https://github.com/theme-next/hexo-symbols-count-time.git",
     "inject": "^1.0.0-beta2",
     "marked": "^0.7.0"
   }
