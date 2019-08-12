@@ -7,14 +7,14 @@ updated: 2019-08-02 18:04:25
 tags: CNN
 categories: PaperReading
 description: 本文指出模型加速和压缩不应仅关注计算量(FLOPs)这一个指标，还应关注如MAC(memory access coss)等其他损失。并根据不同方面的损失通过多组实验给予了模型设计时的4点建议。
-summary_img:
+summary_img: /images/summary.png
 ---
 
 原文：[ShuffleNet V2: Practical Guidelines for Ecient CNN Architecture Design](http://xxx.itp.ac.cn/pdf/1807.11164.pdf)
 
 ### 模型性能指标
 
-​	绝大多数的模型压缩和加速的文章中都使用FLOPs(float-point operations)作为模型的评价指标,用来衡量卷积计算量。但是本文开始就通过一组对比试验指出即使是相同MFOPs的模型，在不同平台上实际的处理速度仍差别很大。![GPU和ARM平台上相同MFLOPs的模型处理速度对比](./ShuffleNetV2/001-ft1.png)
+​	绝大多数的模型压缩和加速的文章中都使用FLOPs(float-point operations)作为模型的评价指标,用来衡量卷积计算量。但是本文开始就通过一组对比试验指出即使是相同MFLOPs的模型，在不同平台上实际的处理速度仍差别很大。![GPU和ARM平台上相同MFLOPs的模型处理速度对比](./ShuffleNetV2/001-ft1.png)
 
 文中分析了相同FLOPs时造成模型速度差别的原因：
 
@@ -32,7 +32,7 @@ summary_img:
 
 ![测试不同平台上模型运行的消耗来源](./ShuffleNetV2/ft2.png)
 
-#### G1：输入输出通道相同时MAC最小
+#### G1：相同的通道宽度可最小化MAC
 
 使用$1\times1$卷积核时，记输入通道$c_{1}$输出通道$c_{2}$，输入尺寸$h, w$，卷积层FLOPs记作$B$就是：
 $$
@@ -55,21 +55,20 @@ $$
 
 ![验证第一点，对不同比例的输入输出通道数进行测试](./ShuffleNetV2/ft3.png)
 
+#### G2：过多的分组增加MAC
 
+分组卷积有效的减少了FLOPs，成为当前模型加速的一个常用方法，应用在MobileNet、Xception和Shufflenet等这些经典网络结构中。分组有效减少FLoPs所以即使加宽网络宽度也不会使得FLOPs超过未分组时，但是FLOPs不怎么增加时，网络处理速度不一定会加速，反而分组在一定程度上会使速度变慢，如ResNeXt训练时比ResNet慢。具体分析和实验如下：
 
-#### G2：过多的分组使得MAC增加
-
-分组卷积有效的减少了FLOPs，成为了模型加速的一个主要方法。分组卷积中FLOPs是:
+分组卷积中FLOPs是:
 $$
 B=\frac{hwc_{1}}{g}
 $$
-分组计算中MAC如下：
+在FLOPs固定时，分组计算中MAC:
 $$
-MAC=hw(c_{1}+c_{2})+\frac{c_{1}c_{2}}{g}
-$$
-在FLOPs相同时，对MAC进行代换得到：
-$$
-MAC=hwc_{1}+\frac{Bg}{c_{1}}+\frac{B}{hw}
+\begin{align}
+MAC &=hw(c_{1}+c_{2})+\frac{c_{1}c_{2}}{g} \\
+&=hwc_{1}+\frac{Bg}{c_{1}}+\frac{B}{hw}
+\end{align}
 $$
 可以看到，此时随着分组$g$的增加$MAC$也会随之增加。
 
@@ -77,8 +76,65 @@ $$
 
 ![验证第一点，对不同比例的输入输出通道数进行测试](./ShuffleNetV2/ft4.png)
 
+从表中很清楚的看到，大的分组数降低运行速度。GPU平台上，1分组的是8分组的2倍以上。ARM平台上，8分组的也比1分组的慢30%。
+
+在设计网络时，针对不同的平台和具体任务选择和设计分组，使用大量分组是不明智的，虽然通道增加，但是有限的性能提升也带来计算成本的快速增大。
+
+#### G3：网络分支会降低并行度
+
+在很多网络中如GoogleNet系列中，多路结构被广泛使用，
+
+设计实验进行了验证，使用1到4个$1\times 1$的卷积块，分别组成序列和分支结构如下：
+
+![验证第一点，对不同比例的输入输出通道数进行测试](./ShuffleNetV2/ft5.png)
+
+每种结构重复十次分别在GPU和ARM平台上进行测试，结果如下表：
+
+![验证第一点，对不同比例的输入输出通道数进行测试](./ShuffleNetV2/ft6.png)
+
+可以看到在GPU平台中，分支并行结构对处理速度影响很大，双分支和四分支序列与并行结构各自对比可以看到，并行结构对处理速度的影响，但在ARM平台上影响较小。
+
+#### G4：元素级运算不可忽视
+
+ 在第二部分刚开始，分析不同平台上的消耗结构中可以看到，尤其是在GPU平台上， element wise操作占用相当一部分。Element wise的操作包括ReLU，AddTensor，这小操作FLOPs很小但是伴随着很大的MAC。
+
+设计实验部分，文中使用ResNet的bottleneck块进行速度测试，然后将ReLU和shortcut移除后进行对比测试
+
+![验证第一点，对不同比例的输入输出通道数进行测试](./ShuffleNetV2/ft7.png)
+
+从结果可以看到，移除ReLU和shortcut操作后，在GPU和ARM平台上都有20%的提升。
+
+#### 总结
+
+根据前面提到的4点准则，设计网络时
+
+- 卷积通道数量前后一样
+- 注意分组消耗
+- 减少分支程度
+- 减少element wise操作
+
+这些准则在设计的时候还要考虑到具体得平台
+
+### Shufflenet V2： 一种高效结构
 
 
-#### G3：
 
-#### G4：
+**shufflenet**广泛使用在终端设备中，轻量级网络设计时有限的设备算力限制了特征提取的通道数，为了增加通道同时不能过度提升FLOPs两个主要的操作被使用： pointwise group conv和 bottleneck-like结构。同时使用channel shuffle操作使不同组操作中的信息可以连通，具体结构如下图(a)和(c)：
+
+![验证第一点，对不同比例的输入输出通道数进行测试](./ShuffleNetV2/ft8.png)
+
+根据前面的4点建议，可以看到pointwise的分组卷积核bottleneck结构违反G1和G2。大量使用分组违反G3，同时Add操作在shortcut中也是违反了G4。
+
+**通道分离和Shufflenet V2**如上图(c)和(d)
+
+对比(a)与(c)结构设计的改进：
+
+- (c)中再开始处有channel split操作，将输入特征通道分成了$c-c'$和$c'$，文中使用$c'=\frac{c}{2}$这与$G1$对应
+
+- 取消$1\times 1$卷积的分组操作，与$G2$对应
+- channel shuffle在concat之后，与$G3$对应
+- 将element wise Add换成concat与$G4$对应
+
+同样的对于(b)和(d)也是针对性的进行设计和改进吗，不过在(d)中开始没有channel shuffle，所以最后concat后特征通道数量翻倍。最后是ShuffleNetV2的详细组成部分，如下图
+
+![验证第一点，对不同比例的输入输出通道数进行测试](./ShuffleNetV2/ft9.png)
