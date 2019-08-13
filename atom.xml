@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.aitical.cn/"/>
-  <updated>2019-08-02T18:04:25.000Z</updated>
+  <updated>2019-08-13T14:05:37.000Z</updated>
   <id>http://www.aitical.cn/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Pytorch多机多卡</title>
+    <link href="http://www.aitical.cn/2019/08/13/Slurm%E9%9B%86%E7%BE%A4%E4%BD%BF%E7%94%A8Pytorch%E5%A4%9A%E6%9C%BA%E5%A4%9A%E5%8D%A1/"/>
+    <id>http://www.aitical.cn/2019/08/13/Slurm集群使用Pytorch多机多卡/</id>
+    <published>2019-08-13T14:05:37.000Z</published>
+    <updated>2019-08-13T14:05:37.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>多卡加速训练的话，单机多卡比较容易，简单的使用Pytorch自带的DataParallel即可，不过如果想要更多的卡进行训练，不得不需要多机多卡。主要参考<span class="exturl" data-url="aHR0cHM6Ly96aHVhbmxhbi56aGlodS5jb20vcC82ODcxNzAyOQ==" title="https://zhuanlan.zhihu.com/p/68717029">这篇<i class="fa fa-external-link"></i></span>文章，在Slurm上成功实现多机多卡,这里主要是整理和记录</p><h4 id="Pytorch分布式训练"><a href="#Pytorch分布式训练" class="headerlink" title="Pytorch分布式训练"></a>Pytorch分布式训练</h4><p>与单机多卡的区别：</p><ul><li>DataLoader部分需要使用Sampler，保证不同卡处理独立的子集</li><li>模型部分使用<code>DistributedDataParallel</code></li></ul><p>主要代码如下，参考了<span class="exturl" data-url="aHR0cHM6Ly96aHVhbmxhbi56aGlodS5jb20vcC82ODcxNzAyOQ==" title="https://zhuanlan.zhihu.com/p/68717029">这篇<i class="fa fa-external-link"></i></span>文章中的内容</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> torch.utils.data <span class="keyword">import</span> Dataset, DataLoader</span><br><span class="line"><span class="keyword">from</span> torch.utils.data.distributed <span class="keyword">import</span> DistributedSampler</span><br><span class="line"><span class="keyword">from</span> torch.nn.parallel <span class="keyword">import</span> DistributedDataParallel</span><br><span class="line"></span><br><span class="line">RANK = int(os.environ[<span class="string">'SLURM_PROCID'</span>])</span><br><span class="line">LOCAL_RANK = int(os.environ[<span class="string">'SLURM_LOCALID'</span>])</span><br><span class="line">GPU_NUM = int(os.environ[<span class="string">'SLURM_NTASKS'</span>])</span><br><span class="line">IP = os.environ[<span class="string">'SLURM_STEP_NODELIST'</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dist_init</span><span class="params">(host_addr, rank, local_rank, world_size, port=<span class="number">23456</span>)</span>:</span></span><br><span class="line">    host_addr_full = <span class="string">'tcp://'</span> + host_addr + <span class="string">':'</span> + str(port)</span><br><span class="line">    torch.distributed.init_process_group(<span class="string">"nccl"</span>, init_method=host_addr_full,</span><br><span class="line">                                         rank=rank, world_size=world_size)</span><br><span class="line">    torch.cuda.set_device(local_rank)</span><br><span class="line">    <span class="keyword">assert</span> torch.distributed.is_initialized()</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">dist_init(IP, RANK, LOCAL_RANK, GPU_NUM)</span><br><span class="line">    </span><br><span class="line">   <span class="comment"># DataSet</span></span><br><span class="line">datasampler = DistributedSampler(dataset, num_replicas=GPU_NUM, rank=RANK)</span><br><span class="line">dataloader = DataLoader(dataset, batch_size=BATCH_SIZE, sampler=datasampler)</span><br><span class="line"></span><br><span class="line"><span class="comment"># model </span></span><br><span class="line">model = DistributedDataPrallel(model, </span><br><span class="line">                                   device_ids=[LOCAL_RANK], </span><br><span class="line">                                   output_device=LOCAL_RANK)</span><br></pre></td></tr></table></figure><p>注意几个参数的设置：</p><ul><li>GPU_NUM: 要使用的GPU总数</li><li>RANK： 进程序号，用于进程通信</li><li><p>LOCAL_RANK: 本地设备序号，用于设备分配</p></li><li><p>BATCH_SIZE：大小是指单张卡的大小</p></li><li>IP: 进程节点ip信息</li></ul><p>启动多机多卡时，完成<code>torch.distributed.init_process_group()</code>初始化，接着对DataLoader进行修改，使用DistributedSampler即可，模型部分对应设置即可</p><p>Slurm启动脚本</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>!/bin/bash</span><br><span class="line"><span class="meta">#</span>SBATCH --job-name=MultiGPU</span><br><span class="line"><span class="meta">#</span>SBATCH --partition=gpu</span><br><span class="line"><span class="meta">#</span>SBATCH -n 32</span><br><span class="line"><span class="meta">#</span>SBATCH --nodes=8 </span><br><span class="line"><span class="meta">#</span>SBATCH --ntasks-per-node=4</span><br><span class="line"><span class="meta">#</span>SBATCH --output= your_path.out</span><br><span class="line"><span class="meta">#</span>SBATCH --error= your_path.err</span><br><span class="line"><span class="meta">#</span>SBATCH --gres=gpu:4</span><br><span class="line"></span><br><span class="line">python ...</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      使用Pytorch(1.1)自带的分布式训练接口，在GPU集群上使用多机多卡训练模型
+    
+    </summary>
+    
+      <category term="Pytorch" scheme="http://www.aitical.cn/categories/Pytorch/"/>
+    
+    
+      <category term="ai-research" scheme="http://www.aitical.cn/tags/ai-research/"/>
+    
+  </entry>
   
   <entry>
     <title>ShuffleNetV2</title>
@@ -27,7 +49,7 @@
     
     <summary type="html">
     
-      本文指出模型加速和压缩不应仅关注计算量(FLOPs)这一个指标，还应关注如MAC(memory access coss)等其他损失。并根据不同方面的损失通过多组实验给予了模型设计时的4点建议。
+      文中指出模型加速和压缩不应仅关注计算量(FLOPs)这一个指标，还应关注如MAC(memory access coss)等其他损失。并根据不同方面的损失通过多组实验给予了模型设计时的4点建议。
     
     </summary>
     

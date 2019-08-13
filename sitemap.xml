@@ -2,23 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://www.aitical.cn/about/index.html</loc>
+    <loc>http://www.aitical.cn/2019/08/13/Slurm%E9%9B%86%E7%BE%A4%E4%BD%BF%E7%94%A8Pytorch%E5%A4%9A%E6%9C%BA%E5%A4%9A%E5%8D%A1/</loc>
     
-    <lastmod>2019-08-12T07:38:52.789Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.aitical.cn/categories/index.html</loc>
-    
-    <lastmod>2019-08-12T07:38:52.789Z</lastmod>
+    <lastmod>2019-08-13T14:05:37.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://www.aitical.cn/tags/index.html</loc>
     
-    <lastmod>2019-08-12T07:38:52.789Z</lastmod>
+    <lastmod>2019-08-13T11:37:04.872Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.aitical.cn/about/index.html</loc>
+    
+    <lastmod>2019-08-13T11:37:04.868Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.aitical.cn/categories/index.html</loc>
+    
+    <lastmod>2019-08-13T11:37:04.868Z</lastmod>
     
   </url>
   
