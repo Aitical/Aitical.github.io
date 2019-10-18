@@ -59,7 +59,7 @@ footer:
   icon:
     # Icon name in Font Awesome. See: https://fontawesome.com/v4.7.0/icons/
     # `heart` is recommended with animation in red (#ff0000).
-    name: 
+    name:
     # If you want to animate the icon, set it to true.
     animated: true
     # Change the color of icon, using Hex Code.
@@ -82,8 +82,8 @@ footer:
 
   # Beian ICP information for Chinese users. See: http://www.beian.miit.gov.cn
   beian:
-    enable: false
-    icp:
+    enable: true
+    icp: 苏ICP备19056157号-1
 
 # Creative Commons 4.0 International License.
 # See: https://creativecommons.org/share-your-work/licensing-types-examples
@@ -1120,7 +1120,7 @@ vendors:
   # pace: //cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js
   # pace_css: //cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.css
   # pace_css: //cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/blue/pace-theme-minimal.min.css
-  pace: //cdn.bootcss.com/pace/0.5.1/pace.min.js 
+  pace: //cdn.bootcss.com/pace/0.5.1/pace.min.js
   pace_css: //cdn.bootcss.com/pace/0.5.1/themes/pace-theme-minimal.min.css
 
   # Internal version: 1.0.0
