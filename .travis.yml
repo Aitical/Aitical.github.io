@@ -16,7 +16,6 @@ after_script:
 - chmod +x ./deploy.sh
 - "./deploy.sh"
 before_install:
-- openssl aes-256-cbc -K $encrypted_0a52873916c9_key -iv $encrypted_0a52873916c9_iv -in id_rsa.enc -out /tmp/id_rsa -d
-- chmod 600 /tmp/id_rsa
-- ssh-add /tmp/id_rsa
+- openssl aes-256-cbc -K $encrypted_0a52873916c9_key -iv $encrypted_0a52873916c9_iv -in id_rsa.enc -out ~/.ssh/id_rsa -d
+- chmod 600 ~/.ssh/id_rsa
 - echo -e "Host 101.132.117.145\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
