@@ -15,4 +15,3 @@ git checkout master
 git add .
 git commit -m ":pencil: Site updated: `date +"%Y-%m-%d %H:%M:%S"`"
 git push origin master
-#git push "https://${CI}@github.com/Aitical/Aitical.github.io.git" master:master --quiet
