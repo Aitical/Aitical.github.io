@@ -1,0 +1,65 @@
+# Site settings
+title: Gang Wu
+baseurl: ""
+url: "https://me.csgwu.site"
+google_analytics: G-1D5ZHCFV7Y
+encoding: utf-8
+
+# Author
+author:
+  name: Gang Wu (吴刚)
+  desc: 
+  email: gwu@hit.edu.cn
+  selfie: assets/img/self.png
+
+# social
+social:
+  email: true
+  behance:
+  bitbucket:
+  dribbble:
+  facebook: 
+  flickr:
+  github: Aitical
+  google_plus:
+  instagram:
+  keybase:
+  linkedin: 
+  pinterest:
+  reddit:
+  soundcloud:
+  stack_exchange:
+  steam:
+  tumblr:
+  gitlab:
+  twitter: 
+  vimeo:
+  wordpress:
+  scholar: JSqb7QIAAAAJ
+  youtube:
+  default_txt: "Follow On"
+
+# Build settings
+markdown: kramdown
+
+# Assets
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Gems
+plugins:
+  - jekyll-paginate
+
+# Permalinks
+# permalink: /:year-:month-:day/:title
+permalink: /:title
+paginate_path: "/portfolio/page:num/"
+paginate: 5
+exclude:
+  - "Gemfile"
+  - "Gemfile.lock"
+  - "*.gem"
+  - "LICENSE"
+  - "READE.md"
+  - "screenshot.png"

@@ -1,0 +1,128 @@
+.ba-slider {
+    position: relative;
+    /* overflow: hidden; */
+    width: 500px; /* 根据实际需要调整 */
+    height: 500px; /* 根据实际需要调整 */
+    /* border-radius: 15px; 添加圆角效果 */
+
+  }
+  
+  .ba-slider img, .img-overlay img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px; /* 添加圆角效果 */
+
+  }
+  
+  .img-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* 设置初始clip值以显示部分“after”图片 */
+    clip: rect(0, 50%, 500px, 0)!important ; /* 假设初始显示50%的“after”图片 */
+  }
+  
+  .slider-handle {
+    position: absolute;
+    top: 0;
+    left: 250px; /* 根据需要调整 */
+    z-index: 100;
+    width: 2.5px; /* 滑块宽度 */
+    height: 100%;
+    background-color: #FFF;
+    cursor: ew-resize;
+    /* 确保滑块足够的宽度来显示箭头 */
+    padding: 0 1px; /* 添加左右padding以为箭头留出空间 */
+  }
+  
+
+  .slider-handle:before, .slider-handle:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    transform: translateY(-50%);
+  }
+  
+  .slider-handle:before {
+    left: 10px; /* 根据需要调整 */
+    border-width: 6px 0 6px 8px; /* 调整三角形大小 */
+    border-color: transparent transparent transparent #ffffff; /* 左箭头颜色 */
+  }
+  
+  .slider-handle:after {
+    right: 10px; /* 根据需要调整 */
+    border-width: 6px 8px 6px 0; /* 调整三角形大小 */
+    border-color: transparent #ffffff transparent transparent; /* 右箭头颜色 */
+  }
+/* 新增的长方形样式 */
+.handle-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300%; /* 或根据需要调整 */
+    height: 10%; /* 或根据需要调整 */
+    background-color: rgb(255, 255, 255); /* 或根据需要调整 */
+  }
+
+
+
+
+
+
+  .toggle-button {
+    background-color: #cbcbcb; /* 按钮背景颜色 */
+    border: none; /* 去除边框 */
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px; /* 按钮大小 */
+    width: 40px; /* 按钮大小 */
+    border-radius: 50%; /* 创建圆形按钮 */
+    position: absolute; /* 绝对定位 */
+    top: 50%; /* 垂直居中 */
+    transform: translateY(-50%);
+  }
+  
+  #prevImage, #nextImage {
+    position: absolute;
+    top: 50%; /* 垂直居中 */
+    transform: translateY(-50%); /* 确保完全居中 */
+    z-index: 5; /* 确保按钮在滑块上方 */
+  }
+
+  
+  #prevImage {
+    /* left: -60px; 向左偏移 */
+    left: calc(50% - 315px); /* 假设按钮位于`.ba-slider`左侧外部20px的位置 */
+    /* clip-path: polygon(50% 0%, 0% 100%, 100% 100%); 三角形朝左 */
+  }
+  
+  #nextImage {
+    right: -60px; /* 向右偏移 */
+    /* clip-path: polygon(50% 100%, 0 0, 100% 0); 三角形朝右 */
+  }
+  
+  .toggle-button::before {
+    content: '';
+    border-style: solid;
+    border-width: 6px 0 6px 10px; /* 三角形大小 */
+    border-color: transparent transparent transparent white; /* 三角形颜色 */
+  }
+  
+  #prevImage::before {
+    transform: rotate(180deg); /* 三角形朝左 */
+  }
+  
+  #nextImage::before {
+    /* 不需要旋转 */
+  }
+  
+  
