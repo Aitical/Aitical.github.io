@@ -243,7 +243,7 @@ I obtained my Bachelor degree from Soochow University in 2020. Currently, I am a
 
 <div class="media">
 	<a name="fsaf" class="pull-left">
-		<img class="media-object" src="../assets/img/index/hit.png" width="200px" height="80px">
+		<img class="media-object" src="../assets/img/index/HIT.png" width="200px" height="80px">
 	</a>
 	<div class="media-body">
 		<p class="media-heading">
