@@ -212,7 +212,7 @@ I obtained my Bachelor degree from Soochow University in 2020. Currently, I am a
 # News
 
 <ul>
-  <li><strong style="color: rgb(90, 100, 120);">2024-04</strong>: One first author paper was accept in ICME 2024 (Oral).</li>
+  <li><strong style="color: rgb(90, 100, 120);">2024-04</strong>: One first author paper was accepted in ICME 2024 (Oral).</li>
   <li><strong style="color: rgb(90, 100, 120);">2024-01</strong>: One first author paper was accepted in Machine Intelligence Research.</li>
     <li><strong style="color: rgb(90, 100, 120);">2024-01</strong>: One paper to appear in ICLR 2024 .</li>
   <li><strong style="color: rgb(90, 100, 120);">2023-12</strong>: One first author paper was accepted in AAAI 2024.</li>
