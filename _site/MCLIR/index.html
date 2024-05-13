@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Model Contrastive Learning for Image Restoration</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" type="text/css" href="../assets/css/fontawesome-all.min.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon.ico">
+
+  <!-- Google Analytics -->
+  
+
+</head>
+
+
+  <body>
+
+    <main>
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-1D5ZHCFV7Y');
+  </script>
+
+<script async="" src="../assets/js/1.js"></script>
+
+<link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet" />
+
+<link rel="stylesheet" href="../assets/css/bulma.min.css" />
+
+<link rel="stylesheet" href="../assets/css/1.css" />
+
+<link rel="stylesheet" href="../assets/css/bulma-carousel.min.css" />
+
+<link rel="stylesheet" href="../assets/css/bulma-slider.min.css" />
+
+<link rel="stylesheet" href="../assets/css/fontawesome.all.min.css" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
+
+<link rel="stylesheet" href="../assets/css/index.css" />
+
+<link rel="icon" href="../assets/images/favicon.svg" />
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script defer="" src="../assets/js/fontawesome.all.min.js"></script>
+
+<script src="../assets/js/bulma-carousel.min.js"></script>
+
+<script src="../assets/js/bulma-slider.min.js"></script>
+
+<p><!-- <script src="../assets/js/index.js"></script> -->
+<!-- </head> --></p>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://me.csgwu.site/">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://me.csgwu.site/SSCSR">
+            SSCSR: Self-Supervised Constraint for Image Super-Resolution
+          </a>
+          <a class="navbar-item" href="https://me.csgwu.site/PCL">
+            PCL: A Practical Contrastive Learning Framework for Image Super-Resolution
+          </a>
+          <!-- <a class="navbar-item" href="https://me.csgwu.site/SCNet">
+            Fully 1x1 Convolutional Network for Lightweight Image Super-Resolution
+          </a> -->
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Learning from History:</h1>
+          <h2 class="title is-2 publication-title">Task-agnostic Model Contrastive Learning for Image Restoration</h2>
+          <h5 class="is-size-5 publication-authors">AAAI 2024</h5>          
+            <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://me.csgwu.site/">Gang Wu</a>,</span>
+            <span class="author-block">
+              <a href="https://homepage.hit.edu.cn/jiangjunjun">Junjun Jiang</a>,</span>
+            <span class="author-block">
+              <a href="https://homepage.hit.edu.cn/jiangkui">Kui Jiang</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://homepage.hit.edu.cn/xmliu">Xianming Liu</a>,
+            </span>
+            
+          </div>
+            <div class="is-size-5 publication-authors">
+            <span class="author-block"><a href="https://github.com/OpenAIIALab">AIIA Lab</a>, Harbin Institute of Technology, Harbin 150001, China.</span>
+            </div>
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://ojs.aaai.org/index.php/AAAI/article/view/28412/28804" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2309.06023" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://github.com/Aitical/MCLIR"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 
+<div style="display: flex;justify-content: center;align-items: center; position: relative;">
+
+  <button id="prevImage" aria-label="上一张" class="toggle-button"></button>
+
+  <div class="ba-slider">
+    <img src="../assets/img/Lway/ours.jpg" alt="Before" class="before-image" />
+    <div class="img-overlay" style="clip: rect(0px, 250px, 500px, 0px);">
+        <img src="../assets/img/Lway/stablesr.jpg" alt="After" />
+    </div>
+    <div class="slider-handle" style="left: 250px;">
+      <div class="handle-center"></div> 
+    </div>
+    <button id="nextImage" aria-label="下一张" class="toggle-button"></button>
+  </div>
+  
+</div>
+ -->
+
+
+<!-- <h2 class="subtitle has-text-centered" style="padding-top: 15px;">
+  <span class="dnerf">LWay</span>  improves the generalization and detail restoration capabilities of SR models on unseen real-world image.
+</h2> -->
+
+
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <!-- <section class="section"> -->
+        <div class="container is-max-desktop">
+          <!-- Abstract. -->
+          <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+              <h2 class="title is-3">Abstract</h2>
+              <div class="content has-text-justified">
+                <p>
+                  
+Contrastive learning, a prominent technique in high-level vision tasks, has recently been applied to address the low-level vision tasks. In addition to minimizing the reconstruction error, contrastive learning-based image restoration methods aim to push the solution to be far apart from the negative samples. It helps to refine the solution space effectively, tackling the inherent challenges of ill-posed nature of image restoration. Nevertheless, the predominant methods of utilizing manually generated negative samples tailored to a certain image restoration task inherently introduce significant biases and limit the applicability to a wide range of image restoration challenges. To address these challenges, in this work, we develop a novel contrastive learning-based image restoration method by 'learning from history', which dynamically generates negative samples from the historical models. Our approach, named model contrastive learning for image restoration (MCLIR), rejuvenates historical models as negative models, making it compatible with diverse image restoration tasks and without additional priors of the tasks. Furthermore, we fully exploit the statistical information from the negative models to generate an uncertainty map as a by-product of our model, to derive an uncertainty-aware reconstruction loss. Extensive experiments highlight the effectiveness of our proposed method. When implemented with existing models, MCLIR has shown significant improvements in a range of tasks and architectures, encompassing both single degradation tasks and all-in-one models.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!--/ Abstract. -->
+        </div>
+      <!-- </section> -->
+    </div>
+  </div>
+</section>
+
+
+<!-- <section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">          
+          <p>
+            For image super-resolution (SR), bridging the gap between the performance on synthetic datasets and real-world degradation scenarios remains a challenge. 
+            This work introduces a novel "Low-Res Leads the Way" (LWay) training framework, 
+            merging Supervised Pre-training with Self-supervised Learning to enhance the adaptability of SR models to real-world images. 
+          </p>
+          <p>
+            Our approach utilizes a low-resolution (LR) reconstruction network to extract degradation embeddings from LR images, 
+            merging them with super-resolved outputs for LR reconstruction. 
+            Leveraging unseen LR images for self-supervised learning guides the model to adapt its modeling space to the target domain, 
+            facilitating fine-tuning of SR models without requiring paired high-resolution (HR) images. 
+            The integration of Discrete Wavelet Transform (DWT) further refines the focus on high-frequency details. 
+          </p>
+          <p>
+            Extensive evaluations show that our method significantly improves the generalization and detail restoration 
+            capabilities of SR models on unseen real-world datasets, outperforming existing methods. 
+            Our training regime is universally compatible, requiring no network architecture modifications, 
+            making it a practical solution for real-world SR applications.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Exploiting the Intermediate Models during Optimizing.
+        </h2>
+        <div class="content has-text-justified">
+          <p>
+            While existing contrastive learning paradigms have achieved impressive performance by leveraging approaches such as hard negative mining and curriculum learning strategies, they still face certain intrinsic limitations. One of the primary constraints is <b>the over-reliance on task-oriented priors</b>, which impedes their generalization capability across various image restoration tasks. Many existing works exhibit a notable bias towards a particular task, wherein the generation of negative samples is associated to the certain task only. 
+          </p>
+          <img  src="../assets/img/MCLIR/toy.png" />
+          <p>
+          </p>
+
+          <p>
+            We turn our focus to the target model itself, rather than sample selection. In recent literature, much of the spotlight has been directed towards negative sample collection, often overlooking a latent gem, the latency model, during the learning process. Specifically, the latency model, when operating within a close optimization step, shares strikingly similar parameters with the current model. This intrinsic similarity paves the way for the construction of proper negatives pertinent to the current anchor sample. To illustrate this concept, we introduce a toy example as the above. It becomes evident that, throughout the learning journey, the output of the latency model exhibits a suboptimal but congruent distribution relative to the current anchor sample. This alignment offers the potential to derive 'hard' negatives that are well suited to the task at hand. Furthermore, as the entire learning process is incrementally refined, the negatives in our model contrastive paradigm adopt a curriculum way naturally. Motivated by these insights, we put forth an innovative <b>model contrastive learning </b> for image restoration tasks.
+          </p>
+          
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+
+
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!-- Animation. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Results</h2>
+        
+        <!-- Re-rendering. -->
+        <h3 class="title is-4">Improvement on Multiple Image Restoration Tasks </h3>
+        <div class="content has-text-justified">
+          <img src="../assets/img/MCLIR/task.png" />
+          <p>
+            <!-- Qualitative comparisons on real-world datasets.  -->
+            Comparisons between models retrained by our proposed model contrastive paradigm and the originals. Retrained models can achieve remarkable improvements on various image restoration tasks.
+          </p>
+        </div>
+        <!--/ Re-rendering. -->
+        <h3 class="title is-4">Comparied to Existing Approaches</h3>
+        <div class="content has-text-justified">
+          <img width=45% src="../assets/img/MCLIR/others.png" />
+          <p>
+            A comparative analysis of the existing contrastive paradigms versus our proposed model contrastive approach. Typically, existing methods are task-oriented and are proposed for image dehazing (CR (Wu et al. 2021) and CCR (Zheng et al. 2023)) and image super-resolution (PCL (Wu, Jiang, and Liu 2023)), separately. Our model contrastive paradigm is task-agonist and outperform existing methods.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{Wu_Jiang_Jiang_Liu_2024, 
+      title={Learning from History: Task-agnostic Model Contrastive Learning for Image Restoration}, 
+      volume={38}, 
+      url={https://ojs.aaai.org/index.php/AAAI/article/view/28412}, 
+      DOI={10.1609/aaai.v38i6.28412}, 
+      number={6}, 
+      journal={Proceedings of the AAAI Conference on Artificial Intelligence}, 
+      author={Wu, Gang and Jiang, Junjun and Jiang, Kui and Liu, Xianming}, 
+      year={2024}, 
+      month={Mar.}, 
+      pages={5976-5984}
+    }
+    </code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link" href="">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="external-link" href="https://github.com/Aitical/MCLIR" disabled="">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            Website template credit to <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- </body> -->
+<!-- </html> -->
+</div>
+
+
+<!-- </div> -->
+
+<!-- <div class="pagination" style="border-top:0px solid #e5e5e5;"> -->
+  <!-- 
+  
+    <a href="/VideoDesnowing" class="right next">Next</a>
+   -->
+
+  <!-- <a href="#" class="top">Top</a> -->
+<!-- </div> -->
+
+
+
+    </main>
+
+    <footer>
+      <span>
+        &copy; <time datetime="2024-04-28 10:39:14 +0800">2024</time> Gang Wu.
+
+      &emsp;
+      <img  style="display:inline !important; margin: auto;"
+      src="https://c.statcounter.com/12491342/0/c00ed0d4/0/" alt="Web
+      Analytics" >
+      <!-- </noscript> -->
+      <!-- End of Statcounter Code -->      
+
+      </span>
+
+
+
+    </footer>
+  </body>
+</html>
+
+
