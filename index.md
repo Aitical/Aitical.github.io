@@ -212,9 +212,11 @@ I obtained my Bachelor degree from Soochow University in 2020. Currently, I am a
 # News
 
 <ul>
+  <li><strong style="color: rgb(90, 100, 120);">2024-07</strong>: One first author paper was accepted in ACM Multimedia 2024.</li>
+  <li><strong style="color: rgb(90, 100, 120);">2024-07</strong>: One paper to appear in ECCV 2024 .</li>
   <li><strong style="color: rgb(90, 100, 120);">2024-04</strong>: One first author paper was accepted in ICME 2024 (Oral).</li>
   <li><strong style="color: rgb(90, 100, 120);">2024-01</strong>: One first author paper was accepted in Machine Intelligence Research.</li>
-    <li><strong style="color: rgb(90, 100, 120);">2024-01</strong>: One paper to appear in ICLR 2024 .</li>
+    <li><strong style="color: rgb(90, 100, 120);">2024-01</strong>: One paper to appear in ICLR 2024.</li>
   <li><strong style="color: rgb(90, 100, 120);">2023-12</strong>: One first author paper was accepted in AAAI 2024.</li>
   <li><strong style="color: rgb(90, 100, 120);">2023-05</strong>: One first author paper was accepted in IEEE Trans. Neural Networks Learn. Syst.</li>
   <li><strong style="color: rgb(90, 100, 120);">2023-04</strong>: One paper to appear in ICML 2023.</li>
@@ -288,7 +290,7 @@ I obtained my Bachelor degree from Soochow University in 2020. Currently, I am a
       <img style="margin:5px;padding-right:20px;width:100%;max-width:100%;" src="../assets/img/index/mm.png" alt="">
     </td>
     <td width="75%" valign="center" class="text-wrapper"> 
-      <div style="color: rgb(118, 130, 150); font-size: 0.9em; line-height: 1.3;"> Under Review </div>
+      <div style="color: rgb(118, 130, 150); font-size: 0.9em; line-height: 1.3;"> ACM MM 24 </div>
       <div  class="paper-title">
         Harmony in Diversity: Improving All-in-One Image Restoration via Multi-Task Collaboration
       </div>
@@ -298,7 +300,8 @@ I obtained my Bachelor degree from Soochow University in 2020. Currently, I am a
 ​      <!-- <em>ACM Multimedia <strong>(ACM MM)</strong></em>, 2023 -->
 ​     <!-- <br> -->
 <!-- ​      <a href="https://me.csgwu.site/MCLIR">[Project]</a>  -->
-​      <a href="https://github.com/Aitical/Art">[Code]</a> and  <a href="">[Paper]</a>  are coming. 
+​      <a href="https://github.com/Aitical/Art">[Code]</a> 
+      <a href="https://openreview.net/pdf?id=aMgbnUqSHv">[Paper]</a> 
 <!-- ​      <a href="https://arxiv.org/abs/2309.06023">[Valse Poster]</a> -->
 
 ​      <!-- <a href="">[Code]</a> -->
@@ -443,6 +446,40 @@ I obtained my Bachelor degree from Soochow University in 2020. Currently, I am a
 <!-- ​      <a href="https://github.com/Aitical/SCNet">[Project]</a>  -->
 ​      <a href="https://github.com/Aitical/PCL-SISR">[Code]</a> 
 ​     <a href="https://arxiv.org/abs/2401.05633">[Arxiv]</a>
+<!-- ​      <a href="https://arxiv.org/abs/2309.06023">[Valse Poster]</a> -->
+
+​      <!-- <a href="">[Code]</a> -->
+​      <!-- <a href="https://paperswithcode.com/dataset/pipal-perceptual-iqa-dataset">[Benchmark]</a>  -->
+​      <!-- <a href="https://www.jasongt.com/research-full">[CVPR 2022 NTIRE Challenge]</a>  -->
+​      <!-- <a href="https://www.youtube.com/watch?v=315Umwgpa6s">[Youtube]</a>  -->
+​      <!-- <a href="https://www.bilibili.com/video/BV1cr4y1P7s4">[Bilibili]</a>  -->
+​      <br>
+<!-- <p>&#x1F525; <i>The extended journal version is under review.</i></p> -->
+​      <!-- <p> 
+​           
+​      </p> -->
+​    </td>
+</tr>
+<!-- =================================================================================== -->
+
+
+
+<!-- =================================================================================== -->
+  <tr>
+    <td style="margin:5px;padding:5px;width:30%;max-width:30%" align="center" class="image-wrapper">
+      <img style="margin:5px;padding-right:20px;width:100%;max-width:100%;" src="../assets/img/index/eccv24.png" alt="">
+    </td>
+    <td width="75%" valign="center" class="text-wrapper"> 
+      <div style="color: rgb(118, 130, 150); font-size: 0.9em; line-height: 1.3;">ECCV 2024</div>
+      <div  class="paper-title">
+      Improving Domain Generalization in Self-Supervised Monocular Depth Estimation via Stabilized Adversarial Training
+      </div>
+      <div class="author">
+      Yuanqi Yao, <span class="author-me">Gang Wu</span>, Kui Jiang, Siao Liu, Jian Kuai, Xianming Liu, and Junjun Jiang
+      </div>
+​      <!-- <em>ACM Multimedia <strong>(ACM MM)</strong></em>, 2023 -->
+​     <!-- <br> -->
+<!-- ​      <a href="https://github.com/Aitical/SCNet">[Project]</a>  -->
 <!-- ​      <a href="https://arxiv.org/abs/2309.06023">[Valse Poster]</a> -->
 
 ​      <!-- <a href="">[Code]</a> -->
