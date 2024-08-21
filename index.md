@@ -212,7 +212,7 @@ I obtained my Bachelor degree from Soochow University in 2020. Currently, I am a
 # News
 
 <ul>
-  <li><strong style="color: rgb(90, 100, 120);">2024-07</strong>: One first author paper was accepted in ACM Multimedia 2024.</li>
+  <li><strong style="color: rgb(90, 100, 120);">2024-07</strong>: One first author paper was accepted in ACM MultiMedia 2024.</li>
   <li><strong style="color: rgb(90, 100, 120);">2024-07</strong>: One paper to appear in ECCV 2024 .</li>
   <li><strong style="color: rgb(90, 100, 120);">2024-04</strong>: One first author paper was accepted in ICME 2024 (Oral).</li>
   <li><strong style="color: rgb(90, 100, 120);">2024-01</strong>: One first author paper was accepted in Machine Intelligence Research.</li>
@@ -282,6 +282,47 @@ I obtained my Bachelor degree from Soochow University in 2020. Currently, I am a
 
 
 <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+
+
+
+
+<!-- =================================================================================== -->
+  <tr>
+    <td style="margin:5px;padding:5px;width:30%;max-width:30%" align="center" class="image-wrapper">
+      <img style="margin:5px;padding-right:20px;width:100%;max-width:100%;" src="../assets/img/index/aaai25.png" alt="">
+    </td>
+    <td width="75%" valign="center" class="text-wrapper"> 
+      <div style="color: rgb(118, 130, 150); font-size: 0.9em; line-height: 1.3;"> Under Review</div>
+      <div  class="paper-title">
+        Debiased All-in-one Image Restoration with Task Uncertainty Regularization
+      </div>
+      <div class="author">
+      <span class="author-me">Gang Wu</span>, Junjun Jiang, Yijun Wang, Kui Jiang, Xianming Liu
+      </div>
+​      <!-- <em>ACM Multimedia <strong>(ACM MM)</strong></em>, 2023 -->
+​     <!-- <br> -->
+<!-- ​      <a href="https://me.csgwu.site/MCLIR">[Project]</a>  -->
+​      <a href="https://github.com/Aitical/TUR">[Code]</a>  and 
+      <a href="">[Paper]</a>  are coming soon.
+<!-- ​      <a href="https://arxiv.org/abs/2309.06023">[Valse Poster]</a> -->
+
+​      <!-- <a href="">[Code]</a> -->
+​      <!-- <a href="https://paperswithcode.com/dataset/pipal-perceptual-iqa-dataset">[Benchmark]</a>  -->
+​      <!-- <a href="https://www.jasongt.com/research-full">[CVPR 2022 NTIRE Challenge]</a>  -->
+​      <!-- <a href="https://www.youtube.com/watch?v=315Umwgpa6s">[Youtube]</a>  -->
+​      <!-- <a href="https://www.bilibili.com/video/BV1cr4y1P7s4">[Bilibili]</a>  -->
+​      <br>
+<!-- <p>&#x1F525; <i>The extended journal version is under review.</i></p> -->
+​      <!-- <p> 
+​           
+​      </p> -->
+​    </td>
+</tr>
+<!-- =================================================================================== -->
+
+
+
+
 
 
 <!-- =================================================================================== -->
