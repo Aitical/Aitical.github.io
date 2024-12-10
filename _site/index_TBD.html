@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gang Wu - Personal Academic Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0070c9;
+            --text-color: #2c3e50;
+            --bg-color: #ffffff;
+            --section-bg: #f8f9fa;
+            --border-color: #e3e3e3;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        header {
+            padding: 3rem 0;
+            background-color: var(--section-bg);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .profile-section {
+            display: flex;
+            gap: 3rem;
+            align-items: flex-start;
+        }
+
+        .profile-image {
+            width: 200px;
+            flex-shrink: 0;
+        }
+
+        .profile-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-info h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+
+        .profile-info .title {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-link:hover {
+            color: var(--primary-color);
+        }
+
+        .contact-link img {
+            width: 20px;
+            height: 20px;
+        }
+
+        section {
+            padding: 3rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            color: var(--text-color);
+        }
+
+        .news-list {
+            list-style: none;
+        }
+
+        .news-item {
+            margin-bottom: 0.5rem;
+            display: flex;
+            gap: 1rem;
+            line-height: 1.4;
+        }
+
+        .news-date {
+            color: var(--primary-color);
+            font-weight: 500;
+            flex-shrink: 0;
+            min-width: 90px;
+        }
+
+        .education-item {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            align-items: center;
+        }
+
+        .education-logo {
+            width: 150px;
+            flex-shrink: 0;
+        }
+
+        .education-logo img {
+            width: 100%;
+            height: auto;
+        }
+
+        .publication-item {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            padding: 1.5rem;
+            background-color: var(--section-bg);
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .publication-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .publication-image {
+            width: 200px;
+            flex-shrink: 0;
+        }
+
+        .publication-image img {
+            width: 100%;
+            border-radius: 4px;
+        }
+
+        .publication-content {
+            flex: 1;
+        }
+
+        .publication-venue {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .publication-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+
+        .publication-authors {
+            margin-bottom: 1rem;
+        }
+
+        .author-me {
+            font-weight: 600;
+        }
+
+        .publication-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .publication-links a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .publication-links a:hover {
+            text-decoration: underline;
+        }
+
+        .experience-item {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            align-items: center;
+        }
+
+        .experience-logo {
+            width: 150px;
+            flex-shrink: 0;
+        }
+
+        .experience-logo img {
+            width: 100%;
+            height: auto;
+        }
+
+        .service-section {
+            margin-bottom: 2rem;
+        }
+
+        .service-title {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+
+        .service-list {
+            list-style: none;
+        }
+
+        .service-item {
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .profile-section {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .contact-links {
+                justify-content: center;
+            }
+
+            .publication-item {
+                flex-direction: column;
+            }
+
+            .publication-image {
+                width: 100%;
+            }
+
+            .education-item,
+            .experience-item {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="profile-section">
+                <div class="profile-image">
+                    <img src="../assets/img/index/gang.png" alt="Gang Wu">
+                </div>
+                <div class="profile-info">
+                    <h1>Gang Wu （吴刚）</h1>
+                    <div class="title">PhD student @ HIT</div>
+                    <p>I obtained my Bachelor degree from Soochow University in 2020. Currently, I am a Ph.D. student at Harbin Institute of Technology, where I am under the supervision of <a href="https://homepage.hit.edu.cn/jiangjunjun">Prof. Junjun Jiang</a>.</p>
+                    <p>Mainly interest in computer vision, especially in <i><b>Low-level Vision</b></i> and <i><b>Representation Learning</b></i>.</p>
+                    <div class="contact-links">
+                        <a href="mailto:gwu@hit.edu.cn" class="contact-link">
+                            <img src="../assets/img/email.svg" alt="Email">
+                            Email
+                        </a>
+                        <a href="https://scholar.google.com/citations?user=JSqb7QIAAAAJ" class="contact-link">
+                            <img src="../assets/img/google_scholar.png" alt="Google Scholar">
+                            Google Scholar
+                        </a>
+                        <a href="https://github.com/Aitical" class="contact-link">
+                            <img src="../assets/img/github.svg" alt="GitHub">
+                            GitHub
+                        </a>
+                        <span class="contact-link">
+                            <img src="../assets/img/wechat.svg" alt="WeChat">
+                            <span onmouseover="showText('Feel free to contact me.')" onmouseout="hideText()">@w965813422</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="news">
+            <h2 class="section-title">News</h2>
+            <ul class="news-list">
+                <li class="news-item">
+                    <span class="news-date">2024-09</span>
+                    <span>One first author paper was accepted in IEEE Transactions on Image Processing.</span>
+                </li>
+                <li class="news-item">
+                    <span class="news-date">2024-07</span>
+                    <span>One first author paper was accepted in ACM Multimedia 2024.</span>
+                </li>
+                <li class="news-item">
+                    <span class="news-date">2024-07</span>
+                    <span>One paper to appear in ECCV 2024.</span>
+                </li>
+                <li class="news-item">
+                    <span class="news-date">2024-04</span>
+                    <span>One first author paper was accepted in ICME 2024 (Oral).</span>
+                </li>
+                <li class="news-item">
+                    <span class="news-date">2024-01</span>
+                    <span>One first author paper was accepted in Machine Intelligence Research.</span>
+                </li>
+                <li class="news-item">
+                    <span class="news-date">2024-01</span>
+                    <span>One paper to appear in ICLR 2024.</span>
+                </li>
+                <li class="news-item">
+                    <span class="news-date">2023-12</span>
+                    <span>One first author paper was accepted in AAAI 2024.</span>
+                </li>
+                <li class="news-item">
+                    <span class="news-date">2023-05</span>
+                    <span>One first author paper was accepted in IEEE Trans. Neural Networks Learn. Syst.</span>
+                </li>
+                <li class="news-item">
+                    <span class="news-date">2023-04</span>
+                    <span>One paper to appear in ICML 2023.</span>
+                </li>
+                <li class="news-item">
+                    <span class="news-date">2023-04</span>
+                    <span>One paper to appear in CVPRW 2022.</span>
+                </li>
+            </ul>
+        </section>
+
+        <section id="education">
+            <h2 class="section-title">Education</h2>
+            <div class="education-item">
+                <div class="education-logo">
+                    <img src="../assets/img/index/HIT.png" alt="Harbin Institute of Technology">
+                </div>
+                <div class="education-content">
+                    <h3>Harbin Institute of Technology</h3>
+                    <p>Ph.D. student, 2020 ~ present</p>
+                </div>
+            </div>
+            <div class="education-item">
+                <div class="education-logo">
+                    <img src="../assets/img/index/soochow.png" alt="Soochow University">
+                </div>
+                <div class="education-content">
+                    <h3>Soochow University</h3>
+                    <p>B.Eng., Major in Computer Science, Sep 2016 - Jul 2020</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="publications">
+            <h2 class="section-title">Publications</h2>
+            <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+                <tbody>
+                    <tr>
+                        <td style="margin:5px;padding:5px;width:30%;max-width:30%" align="center" class="image-wrapper">
+                            <img style="margin:5px;padding-right:20px;width:100%;max-width:100%;" src="../assets/img/index/cfsr.png" alt="">
+                        </td>
+                        <td width="75%" valign="center" class="text-wrapper">
+                            <div style="color: rgb(118, 130, 150); font-size: 0.9em; line-height: 1.3;">IEEE Transactions on Image Processing</div>
+                            <div class="paper-title">
+                                Transforming Image Super-Resolution: A ConvFormer-based Efficient Approach
+                            </div>
+                            <div class="author">
+                                <span class="author-me">Gang Wu</span>, Junjun Jiang, Junpeng Jiang, Xianming Liu
+                            </div>
+                            <a href="https://github.com/Aitical/CFSR">[Code]</a>
+                            <a href="https://arxiv.org/abs/2401.05633">[paper]</a>
+                            <br>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="margin:5px;padding:5px;width:30%;max-width:30%" align="center" class="image-wrapper">
+                            <img style="margin:5px;padding-right:20px;width:100%;max-width:100%;" src="../assets/img/index/aaai25.png" alt="">
+                        </td>
+                        <td width="75%" valign="center" class="text-wrapper">
+                            <div style="color: rgb(118, 130, 150); font-size: 0.9em; line-height: 1.3;">Under Review</div>
+                            <div class="paper-title">
+                                Debiased All-in-one Image Restoration with Task Uncertainty Regularization
+                            </div>
+                            <div class="author">
+                                <span class="author-me">Gang Wu</span>, Junjun Jiang, Yijun Wang, Kui Jiang, Xianming Liu
+                            </div>
+                            <a href="https://github.com/Aitical/TUR">[Code]</a> and
+                            <a href="">[Paper]</a> are coming soon.
+                            <br>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="margin:5px;padding:5px;width:30%;max-width:30%" align="center" class="image-wrapper">
+                            <img style="margin:5px;padding-right:20px;width:100%;max-width:100%;" src="../assets/img/index/mm.png" alt="">
+                        </td>
+                        <td width="75%" valign="center" class="text-wrapper">
+                            <div style="color: rgb(118, 130, 150); font-size: 0.9em; line-height: 1.3;">ACM MM 24</div>
+                            <div class="paper-title">
+                                Harmony in Diversity: Improving All-in-One Image Restoration via Multi-Task Collaboration
+                            </div>
+                            <div class="author">
+                                <span class="author-me">Gang Wu</span>, Junjun Jiang, Kui Jiang, Xianming Liu
+                            </div>
+                            <a href="https://github.com/Aitical/Art">[Code]</a>
+                            <a href="https://openreview.net/pdf?id=aMgbnUqSHv">[Paper]</a>
+                            <br>
+                        </td>
+                    </tr>
+
+                    <!-- Add all other publications following the same pattern -->
+                </tbody>
+            </table>
+        </section>
+
+        <section id="experience">
+            <h2 class="section-title">Experience</h2>
+            <div class="experience-item">
+                <div class="experience-logo">
+                    <img src="../assets/img/index/megvii.png" alt="MEGVII">
+                </div>
+                <div class="experience-content">
+                    <h3>MEGVII</h3>
+                    <p>2022.4 ~ 2022.10. Research Intern.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="service">
+            <h2 class="section-title">Academic Service & Awards</h2>
+            
+            <div class="service-section">
+                <h3 class="service-title">Competition Awards</h3>
+                <ul class="service-list">
+                    <li class="service-item">ICRA 2023 RoboDepth Challenge, <span class="highlight">3rd place</span> in Track 1 and <span class="highlight">Innovative Prize</span> in Track 2.</li>
+                    <li class="service-item">NTIRE 2022 Image Inpainting Challenge, <span class="highlight">2nd place</span> in Track 1.</li>
+                </ul>
+            </div>
+
+            <div class="service-section">
+                <h3 class="service-title">Reviewer</h3>
+                <ul class="service-list">
+                    <li class="service-item">The International Conference on Learning Representations (ICLR)</li>
+                    <li class="service-item">The International Joint Conference on Artificial Intelligence (IJCAI)</li>
+                    <li class="service-item">The International Conference on Machine Learning (ICML)</li>
+                    <li class="service-item">ACM Multimedia (ACM MM)</li>
+                    <li class="service-item">IEEE International Conference on Acoustics, Speech, and Signal Processing (ICASSP)</li>
+                    <li class="service-item">IEEE International Conference on Multimedia and Expo (ICME)</li>
+                    <li class="service-item">IEEE Transactions on Neural Networks and Learning Systems</li>
+                    <li class="service-item">IEEE Transactions on Circuits and Systems for Video Technology</li>
+                    <li class="service-item">IEEE Transactions on Multimedia</li>
+                    <li class="service-item">IEEE Transactions on Image Processing</li>
+                    <li class="service-item">Information Fusion</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function showText(text) {
+            var tooltip = document.getElementById('tooltip');
+            tooltip.innerHTML = text;
+            tooltip.style.display = 'block';
+        }
+
+        function hideText() {
+            var tooltip = document.getElementById('tooltip');
+            tooltip.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
