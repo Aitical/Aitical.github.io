@@ -379,7 +379,8 @@ I obtained my Bachelor degree from Soochow University in 2020. Currently, I am a
 ​      <!-- <em>ACM Multimedia <strong>(ACM MM)</strong></em>, 2023 -->
 ​     <!-- <br> -->
 <!-- ​      <a href="https://me.csgwu.site/MCLIR">[Project]</a>  -->
-​      <a href="https://github.com/Aitical/TUR">[Code]</a>  and 
+​      <a href="https://me.csgwu.site/TUR">[Project]</a> 
+​      <a href="https://github.com/Aitical/TUR">[Code]</a>
       <a href="">[Paper]</a>  are coming soon.
 <!-- ​      <a href="https://arxiv.org/abs/2309.06023">[Valse Poster]</a> -->
 
